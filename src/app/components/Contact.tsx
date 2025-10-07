@@ -118,7 +118,7 @@ export default function Contact() {
               value: (
                 <Button
                   component="a"
-                  href="https://api.whatsapp.com/send?phone=919876543210&text=Hi%20Techbeacon%20Team,%20I%20want%20to%20discuss%20a%20new%20project."
+                  href="https://api.whatsapp.com/send?phone=919209652754&text=Hi%20Techbeacon%20Team,%20I%20want%20to%20discuss%20a%20new%20project."
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="contained"
