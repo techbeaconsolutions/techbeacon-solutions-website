@@ -91,7 +91,7 @@ export default function Footer() {
                 Contact
               </Typography>
               <Typography
-                href="mailto:hello@techbeacon.com"
+                href="mailto:techbeacon.solutions@gmail.com"
                 component="a"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -104,7 +104,7 @@ export default function Footer() {
                 variant="body2"
                 sx={{ display: "flex", alignItems: "center", mb: 1 }}
               >
-                <PhoneIcon sx={{ mr: 1, fontSize: 18 }} /> +91-XXXXXXXXXX
+                <PhoneIcon sx={{ mr: 1, fontSize: 18 }} /> +91-9209652754
               </Typography>
               <Typography
                 variant="body2"
