@@ -133,7 +133,7 @@ export default function Contact() {
                 </Button>
               ),
               subtitle:
-                "Get instant responses to your queries. Chat with our team directly on WhatsApp.",
+                "Get instant responses and share your requirement directly on WhatsApp.",
             },
             {
               icon: <LocationOnIcon fontSize="large" sx={{ color: "#0871da" }} />,
@@ -204,9 +204,9 @@ export default function Contact() {
             }}
           >
             <Typography variant="h5" fontWeight={700} align="center" gutterBottom>
-              Start Your{" "}
+              Get Free{" "}
               <Box component="span" sx={{ color: "#06c3e0" }}>
-                Project
+                Consultation
               </Box>
             </Typography>
 

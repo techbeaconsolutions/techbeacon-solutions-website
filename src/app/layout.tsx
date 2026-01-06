@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins, DM_Sans } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "./components/ScrollToTop";
+import FloatingAuditCTA from "./components/FloatingAuditCTA";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,14 +30,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://techbeacon-web.vercel.app"),
   title: "Techbeacon | Innovate Smarter",
   description:
-    "Techbeacon builds modern web, mobile, and cloud solutions to help your business grow. Let’s innovate together.",
+    "Techbeacon helps local businesses and startups grow through Google Maps, Local SEO, WhatsApp lead systems, and modern web & mobile solutions in Pune.",
   icons: {
     icon: "/favicon.png",
   },
   openGraph: {
     title: "Techbeacon | Innovate Smarter",
     description:
-      "Techbeacon builds modern web, mobile, and cloud solutions to help your business grow. Let’s innovate together.",
+      "Techbeacon helps local businesses and startups grow through Google Maps, Local SEO, WhatsApp lead systems, and modern web & mobile solutions in Pune.",
     url: "https://techbeacon-web.vercel.app",
     siteName: "Techbeacon",
     images: [
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Techbeacon | Innovate Smarter",
     description:
-      "Techbeacon builds modern web, mobile, and cloud solutions to help your business grow. Let’s innovate together.",
+      "Techbeacon helps local businesses and startups grow through Google Maps, Local SEO, WhatsApp lead systems, and modern web & mobile solutions in Pune.",
     images: ["/social-preview.png"],
   },
 };
@@ -67,10 +68,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning
         className={`${poppins.variable} ${dmSans.variable} ${geistSans.variable} ${geistMono.variable}`}
       >
         {children}
-        <ScrollToTop /> {/* ✅ Floating scroll-to-top button inside the same body */}
+
+        {/* Global UI helpers */}
+        <ScrollToTop />
+        <FloatingAuditCTA />
       </body>
     </html>
   );

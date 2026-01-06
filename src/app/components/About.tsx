@@ -39,10 +39,7 @@ export default function AboutSection() {
                 color="text.secondary"
                 sx={{ mb: 4, maxWidth: 650 }}
               >
-                We help startups and enterprises accelerate digital
-                transformation through scalable, secure, and user-friendly web
-                and mobile solutions. Our focus is on innovation, reliability,
-                and long-term client success.
+                We are Based in Pune, Maharashtra, we help startups and enterprises accelerate digital transformation through scalable, secure, and user-friendly web and mobile solutions, with a strong focus on innovation, reliability, and long-term client success.
               </Typography>
             </motion.div>
 
