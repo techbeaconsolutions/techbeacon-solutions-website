@@ -23,12 +23,13 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
         >
           <Typography
-            variant="h4"
+            component="p"
             fontWeight="bold"
             sx={{ fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" } }}
           >
             Techbeacon
           </Typography>
+
         </motion.div>
 
         <motion.div
@@ -37,7 +38,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <Typography
-            variant="h2"
+            variant="h1"
             sx={{
               fontFamily: "var(--font-poppins)",
               fontWeight: 800,
@@ -56,7 +57,7 @@ const HeroSection = () => {
               },
             }}
           >
-            Your Digital Growth Partner
+            Custom Web & Mobile App Development Company
           </Typography>
 
         </motion.div>
@@ -68,7 +69,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.6 }}
         >
           <Typography
-            variant="h6"
+            component="p"
             sx={{
               fontFamily: "var(--font-dmsans)",
               fontSize: { xs: "1rem", sm: "1.1rem", md: "1.25rem" },
@@ -78,7 +79,7 @@ const HeroSection = () => {
               lineHeight: 1.5,
             }}
           >
-            We build{" "}
+            We build scalable{" "}
             <Box
               component="span"
               sx={{ color: "#00bcd4", fontWeight: 700 }}
@@ -92,7 +93,7 @@ const HeroSection = () => {
             >
               mobile apps
             </Box>
-            , and custom software to help your business grow.
+            , and custom software solutions for startups and enterprises using modern technologies..
           </Typography>
 
         </motion.div>
@@ -111,7 +112,7 @@ const HeroSection = () => {
             flexWrap="wrap"
           >
             <Button
-              component="a" 
+              component="a"
               href="#contact"
               variant="contained"
               sx={{

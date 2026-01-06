@@ -15,31 +15,37 @@ const portfolioItems = [
   {
     title: "Analytics Dashboard",
     image: "/images/dashboard.jpg",
+    alt: "Business analytics dashboard web application",
     description: "Custom analytics dashboards for business insights.",
   },
   {
     title: "E-commerce Platform",
     image: "/images/ecommerce.jpg",
+    alt: "E-commerce website development project",
     description: "Modern online stores with payment integration.",
   },
   {
     title: "Mobile Banking App",
     image: "/images/banking.jpg",
+    alt: "Banking and finance software dashboard",
     description: "Secure mobile apps for financial services.",
   },
   {
     title: "Corporate Website",
     image: "/images/website.jpg",
+    alt: "Corporate website design and development",
     description: "Professional websites for corporate presence.",
   },
   {
     title: "SaaS Platform",
     image: "/images/saas.jpg",
+    alt: "SaaS product user interface design",
     description: "Cloud-based SaaS applications with scalability.",
   },
   {
     title: "Restaurant Management",
     image: "/images/restaurant.jpg",
+    alt: "Restaurant management software system",
     description: "Complete restaurant POS & management systems.",
   },
 ];

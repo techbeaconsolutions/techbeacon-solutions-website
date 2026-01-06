@@ -21,7 +21,7 @@ export default function AboutSection() {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <Typography variant="h3" fontWeight={700}>
+              <Typography variant="h2" fontWeight={700}>
                 About <span style={{ color: "#0871da" }}>Techbeacon</span>
               </Typography>
             </motion.div>
@@ -39,7 +39,7 @@ export default function AboutSection() {
                 color="text.secondary"
                 sx={{ mb: 4, maxWidth: 650 }}
               >
-                We are Based in Pune, Maharashtra, we help startups and enterprises accelerate digital transformation through scalable, secure, and user-friendly web and mobile solutions, with a strong focus on innovation, reliability, and long-term client success.
+                Our focus is on innovation, reliability, and long-term partnerships, ensuring every solution we deliver aligns with business goals and future growth.
               </Typography>
             </motion.div>
 
@@ -47,7 +47,7 @@ export default function AboutSection() {
             <Grid container spacing={4}>
               <Grid item xs={12} sm={4} textAlign="center">
                 <TrackChangesOutlinedIcon sx={{ fontSize: 40, color: "#0871da" }} />
-                <Typography variant="h6" fontWeight={600}>
+                <Typography variant="h3">
                   Mission-Driven
                 </Typography>
                 <Typography color="text.secondary" fontSize="0.8rem">
@@ -57,7 +57,7 @@ export default function AboutSection() {
 
               <Grid item xs={12} sm={4} textAlign="center">
                 <EmojiPeopleOutlinedIcon sx={{ fontSize: 40, color: "#0871da" }} />
-                <Typography variant="h6" fontWeight={600}>
+                <Typography variant="h3">
                   Client-Centric
                 </Typography>
                 <Typography color="text.secondary" fontSize="0.8rem">
@@ -67,7 +67,7 @@ export default function AboutSection() {
 
               <Grid item xs={12} sm={4} textAlign="center">
                 <LightbulbOutlinedIcon sx={{ fontSize: 40, color: "#0871da" }} />
-                <Typography variant="h6" fontWeight={600}>
+                <Typography variant="h3">
                   Innovation First
                 </Typography>
                 <Typography color="text.secondary" fontSize="0.8rem">
@@ -94,7 +94,7 @@ export default function AboutSection() {
                   mt: { xs: 4, md: 0 },
                 }}
               >
-                <Typography variant="h4" fontWeight={700}>
+                <Typography variant="h3" fontWeight={700}>
                   What Makes Us{" "}
                   <span style={{ color: "#07bddf" }}>Different?</span>
                 </Typography>
@@ -137,7 +137,7 @@ export default function AboutSection() {
             { value: "4.9/5", label: "Support Rating", color: "#06c3e0" },
           ].map((stat, i) => (
             <Grid item xs={6} sm={3} key={i}>
-              <Typography variant="h4" fontWeight="bold" color={stat.color}>
+              <Typography variant="h3" fontWeight="bold" color={stat.color}>
                 {stat.value}
               </Typography>
               <Typography color="text.secondary">{stat.label}</Typography>

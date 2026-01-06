@@ -24,8 +24,7 @@ const services = [
     icon: WebIcon,
     title: "Web Development",
     description:
-      "Modern, responsive websites and\nweb applications built with\ncutting-edge technologies for your\nbusiness growth.",
-    features: [
+"Modern, responsive websites and scalable web applications built using React, Next.js, and modern frameworks to drive business growth and performance.",    features: [
       "React/Next.js",
       "SEO Optimized",
       "Fast Loading",
@@ -36,14 +35,14 @@ const services = [
     icon: MobileIcon,
     title: "Mobile Apps",
     description:
-      "Native and cross-platform mobile\napplications for iOS and Android\nwith stunning user experiences.",
+"High-performance Android and iOS mobile applications built using React Native and Flutter, designed for speed, security, and great user experience.",
     features: ["React Native", "Flutter", "iOS/Android", "App Store Ready"],
   },
   {
     icon: SoftwareIcon,
     title: "Custom Software",
     description:
-      "Tailor-made software solutions\ndesigned specifically for your\nbusiness requirements and\nworkflows.",
+"Tailor-made software solutions designed to streamline business operations, automate workflows, and scale with your organization’s growth.",
     features: [
       "Custom Development",
       "API Integration",
@@ -55,7 +54,7 @@ const services = [
     icon: CloudIcon,
     title: "Hosting & Support",
     description:
-      "Reliable hosting solutions with 24/7\nsupport and maintenance to keep\nyour applications running\nsmoothly.",
+"Reliable cloud hosting, performance monitoring, and 24/7 technical support to ensure your applications remain fast, secure, and always available.",
     features: [
       "Cloud Hosting",
       "24/7 Support",
@@ -72,7 +71,7 @@ const digitalservices = [
     icon: PlaceIcon,
     title: "Google Business Profile",
     description:
-      "Get found on Google Maps when customers search for services near you.",
+"Optimize your Google Business Profile to appear on Google Maps and local searches, attract nearby customers, and increase trust through reviews.",
     features: [
       "Profile setup & optimization",
       "Local visibility",
@@ -83,7 +82,7 @@ const digitalservices = [
     icon: MonochromePhotosIcon,
     title: "Instagram Marketing",
     description:
-      "Build local brand awareness and trust through consistent Instagram posts.",
+"Grow your local brand presence with consistent Instagram posts, reels, and engagement strategies designed for your target audience.",
     features: ["Business posts & reels", "Local audience reach", "Engagement growth"],
   },
   {
@@ -99,7 +98,7 @@ const digitalservices = [
     icon: TrendingUpIcon,
     title: "Digital Marketing",
     description:
-      "End-to-end digital marketing to generate enquiries and grow your business.",
+"End-to-end digital marketing solutions including SEO, social media marketing, and lead generation to grow your business online.",
     features: [
       "SEO",
       "Social media marketing",
@@ -119,7 +118,7 @@ export default function Services() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <Typography variant="h3" fontWeight={700} align="center">
+          <Typography variant="h2" fontWeight={700} align="center">
             Our{" "}
             <Box
               component="span"
@@ -209,8 +208,7 @@ export default function Services() {
 
                   {/* Title */}
                   <Typography
-                    variant="h6"
-                    fontWeight={600}
+                    variant="h3"
                     sx={{
                       "&:hover": {
                         background: "linear-gradient(90deg,#0871da,#0cc6e9)",
@@ -290,7 +288,7 @@ export default function Services() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <Typography variant="h3" fontWeight={700} align="center">
+            <Typography variant="h2" fontWeight={700} align="center">
               Digital Growth{" "}
               <Box
                 component="span"
@@ -379,8 +377,7 @@ export default function Services() {
 
                     {/* Title */}
                     <Typography
-                      variant="h6"
-                      fontWeight={600}
+                      variant="h3"
                       sx={{
                         "&:hover": {
                           background: "linear-gradient(90deg,#0871da,#0cc6e9)",

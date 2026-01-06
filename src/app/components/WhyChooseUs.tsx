@@ -75,11 +75,11 @@ const StatsCard: React.FC<StatsCardProps> = ({
         >
           {icon}
         </Box>
-        <Typography variant="h4" fontWeight={700} color="primary">
+        <Typography component="p" fontWeight={700} color="primary">
           {value}
           {suffix}
         </Typography>
-        <Typography variant="subtitle1" fontWeight={600}>
+        <Typography component="p" fontWeight={600}>
           {title}
         </Typography>
         {subtitle && (
@@ -103,11 +103,11 @@ export default function WhyChooseUs() {
   const reasons = [
     {
       icon: <CheckCircleOutlineOutlinedIcon sx={{ color: "#3688da" }} />,
-      text: "Tailor-made solutions",
+      text: "Tailor-made software solutions for your business needs",
     },
     {
       icon: <CheckCircleOutlineOutlinedIcon sx={{ color: "#06c3e0" }} />,
-      text: "Affordable & transparent pricing",
+      text: "Affordable, transparent pricing with no hidden costs",
     },
     {
       icon: <CheckCircleOutlineOutlinedIcon sx={{ color: "#3688da" }} />,
@@ -149,7 +149,7 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <Typography variant="h3" fontWeight={700} align="center">
+          <Typography variant="h2" fontWeight={700} align="center">
             Why Choose{" "}
             <Box
               component="span"
@@ -255,12 +255,12 @@ export default function WhyChooseUs() {
                     "linear-gradient(90deg, rgba(8,113,218,0.05), rgba(12,198,233,0.05))",
                 }}
               >
-                <Typography variant="h6" fontWeight={600} align="center">
+                <Typography variant="h3" fontWeight={600} align="center">
                   Our Commitment
                 </Typography>
                 <Grid container spacing={4} textAlign="center" sx={{ mt: 2 }}>
                   <Grid item xs={12} sm={4}>
-                    <Typography variant="h5" color="primary" fontWeight={700}>
+                    <Typography component="p" color="primary" fontWeight={700}>
                       100%
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -268,7 +268,7 @@ export default function WhyChooseUs() {
                     </Typography>
                   </Grid>
                   <Grid item xs={12} sm={4}>
-                    <Typography variant="h5" color="secondary" fontWeight={700}>
+                    <Typography component="p" color="secondary" fontWeight={700}>
                       24/7
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
