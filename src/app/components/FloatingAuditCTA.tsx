@@ -22,10 +22,9 @@ export default function FloatingAuditCTA() {
         startIcon={<CampaignIcon />}
         href="https://wa.me/919209652754?text=Hi%20I%20want%20a%20free%20local%20visibility%20audit%20for%20my%20business"
         target="_blank"
-        aria-label="Get Free Local Visibility Audit"
+        aria-label="Get Free Local Consulting"
         sx={{
-          backgroundColor: "#0cc6e9",
-          color: "#003b4f",
+                      background: "linear-gradient(90deg,#0871da,#0cc6e9)",
           fontWeight: 700,
           textTransform: "none",
           px: 2.5,
@@ -33,13 +32,12 @@ export default function FloatingAuditCTA() {
           borderRadius: "999px",
           boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
           "&:hover": {
-            backgroundColor: "#08b0d0",
+            background: "linear-gradient(90deg, #0871da, #a855f7)",
             boxShadow: "0 12px 36px rgba(0,0,0,0.25)",
           },
         }}
       >
-        Free Local Visibility Audit
-      </Button>
+        Get Free Consulting      </Button>
     </motion.div>
   );
 }

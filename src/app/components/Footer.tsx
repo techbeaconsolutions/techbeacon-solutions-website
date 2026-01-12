@@ -42,14 +42,29 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
+              {/* Logo */}
+              <Box mb={1}>
+                <img
+                  src="/favicon.png"
+                  alt="TechBeacon Solutions Logo"
+                  style={{
+                    height: 48,
+                    width: "auto",
+                  }}
+                />
+              </Box>
+
+              {/* Company Name */}
               <Typography variant="h6" fontWeight={700} gutterBottom>
-                Techbeacon
+                TechBeacon Solutions
               </Typography>
 
+              {/* Tagline */}
               <Typography variant="body2" sx={{ lineHeight: 1.7 }}>
                 Your trusted digital growth partner for websites, mobile apps, and custom software solutions.
               </Typography>
             </motion.div>
+
           </Grid>
 
           {/* Quick Links */}

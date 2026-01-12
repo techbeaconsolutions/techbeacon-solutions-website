@@ -263,6 +263,9 @@ export default function Contact() {
                       textTransform: "none",
                       fontSize: "1rem",
                       background: "linear-gradient(90deg,#0871da,#0cc6e9)",
+                      "&:hover": {
+            background: "linear-gradient(90deg, #0871da, #a855f7)",
+          },
                     }}
                   >
                     Send Message
@@ -306,7 +309,7 @@ export default function Contact() {
             aria-label="WhatsApp"
             sx={{
               position: "fixed",
-              bottom: 20,
+              bottom: 80,
               right: 20,
               backgroundColor: "#25D366",
               color: "white",

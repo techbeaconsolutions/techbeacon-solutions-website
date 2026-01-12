@@ -1,14 +1,17 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Fab, Zoom } from "@mui/material";
+import { Fab, Zoom, useMediaQuery } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
 
+  // Detect mobile screens
+  const isMobile = useMediaQuery("(max-width:768px)");
+
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 300); 
+      setVisible(window.scrollY > 300);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -26,7 +29,7 @@ const ScrollToTop = () => {
         aria-label="scroll back to top"
         sx={{
           position: "fixed",
-          bottom: 90,
+          bottom: isMobile ? 150 : 90,
           right: 20,
           background: "linear-gradient(90deg, #0871da, #0cc6e9)",
           color: "white",
