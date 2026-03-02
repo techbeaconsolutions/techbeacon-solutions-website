@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Poppins, DM_Sans } from "next/font/google";
+import { Poppins, DM_Sans } from "next/font/google";
 import "./globals.css";
 
 import ScrollToTop from "./components/ScrollToTop";
@@ -18,15 +18,6 @@ const dmSans = DM_Sans({
   variable: "--font-dmsans",
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://techbeacon-web.vercel.app"),
@@ -46,8 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${dmSans.variable} ${geistSans.variable} ${geistMono.variable}`}
-      >
+        className={`${poppins.variable} ${dmSans.variable}`}      >
         {/* ✅ Emotion MUST wrap everything that uses MUI */}
         <EmotionRegistry>
           {/* SEO schema */}
