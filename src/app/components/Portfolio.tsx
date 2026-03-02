@@ -1,119 +1,140 @@
 "use client";
 
-import {
-  Box,
-  Container,
-  Typography,
-  Card,
-  CardMedia,
-  CardContent,
-  Grid,
-} from "@mui/material";
+import { Box, Container, Typography, Grid, Stack, Paper } from "@mui/material";
 import { motion } from "framer-motion";
 
-const portfolioItems = [
-  {
-    title: "Analytics Dashboard",
-    image: "/images/dashboard.jpg",
-    alt: "Business analytics dashboard web application",
-    description: "Custom analytics dashboards for business insights.",
-  },
-  {
-    title: "E-commerce Platform",
-    image: "/images/ecommerce.jpg",
-    alt: "E-commerce website development project",
-    description: "Modern online stores with payment integration.",
-  },
-  {
-    title: "Mobile Banking App",
-    image: "/images/banking.jpg",
-    alt: "Banking and finance software dashboard",
-    description: "Secure mobile apps for financial services.",
-  },
-  {
-    title: "Corporate Website",
-    image: "/images/website.jpg",
-    alt: "Corporate website design and development",
-    description: "Professional websites for corporate presence.",
-  },
-  {
-    title: "SaaS Platform",
-    image: "/images/saas.jpg",
-    alt: "SaaS product user interface design",
-    description: "Cloud-based SaaS applications with scalability.",
-  },
-  {
-    title: "Restaurant Management",
-    image: "/images/restaurant.jpg",
-    alt: "Restaurant management software system",
-    description: "Complete restaurant POS & management systems.",
-  },
-];
-
 export default function Portfolio() {
-  return (
-    <Box sx={{ py: 10, backgroundColor: "#f9f9f9" }}>
-      <Container>
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-        >
-          <Typography variant="h3" fontWeight={700} align="center">
-            Our Portfolio
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            align="center"
-            sx={{ mb: 6, maxWidth: 700, mx: "auto" }}
-          >
-            Showcasing our latest projects and successful digital transformations
-            across industries.
-          </Typography>
-        </motion.div>
+  const projects = [
+    {
+      tag: "Web App",
+      title: "FinTech Dashboard",
+      subtitle: "Real-time trading analytics platform",
+      gradient: "linear-gradient(135deg, #4F46E5, #9333EA)",
+    },
+    {
+      tag: "Full Stack",
+      title: "E-Commerce Platform",
+      subtitle: "Scalable marketplace with 10M+ users",
+      gradient: "linear-gradient(135deg, #3B82F6, #2563EB)",
+    },
+    {
+      tag: "SaaS",
+      title: "Healthcare Portal",
+      subtitle: "HIPAA-compliant patient management",
+      gradient: "linear-gradient(135deg, #9333EA, #C026D3)",
+    },
+    {
+      tag: "Mobile",
+      title: "Real Estate App",
+      subtitle: "AI-powered property recommendations",
+      gradient: "linear-gradient(135deg, #06B6D4, #0891B2)",
+    },
+  ];
 
-        {/* Grid Cards */}
+  return (
+    <Box
+      sx={{
+        background:
+          "radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0b1120 60%)",
+        color: "#fff",
+        py: { xs: 10, md: 14 },
+      }}
+    >
+      <Container maxWidth="lg">
+
+        {/* ===== HEADING ===== */}
+        <Stack spacing={3} textAlign="center" mb={10}>
+          <Typography
+            sx={{
+              fontSize: "0.8rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "#6366F1",
+              fontWeight: 600,
+            }}
+          >
+            Our Work
+          </Typography>
+
+          <Typography
+            sx={{
+              fontSize: { xs: "2.5rem", md: "4rem" },
+              fontWeight: 800,
+              lineHeight: 1.1,
+            }}
+          >
+            Featured Projects
+          </Typography>
+
+          <Typography
+            sx={{
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              color: "#94A3B8",
+            }}
+          >
+            A selection of projects that showcase our expertise and craft.
+          </Typography>
+        </Stack>
+
+        {/* ===== PROJECT GRID ===== */}
         <Grid container spacing={4}>
-          {portfolioItems.map((item, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+          {projects.map((project, index) => (
+            <Grid item xs={12} md={6} key={index}>
               <motion.div
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card
+                <Paper
+                  elevation={0}
                   sx={{
-                    cursor: "pointer",
-                    transition: "0.3s",
+                    p: 6,
+                    borderRadius: "20px",
+                    background: project.gradient,
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                    minHeight: "220px",
+                    transition: "all 0.3s ease",
                     "&:hover": {
-                      transform: "scale(1.05)",
-                      boxShadow: 6,
+                      transform: "translateY(-6px)",
+                      boxShadow: "0 20px 50px rgba(0,0,0,0.3)",
                     },
                   }}
                 >
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image={item.image}
-                    alt={item.title}
-                  />
-                  <CardContent>
-                    <Typography variant="h6" fontWeight={600}>
-                      {item.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {item.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
+                  <Typography
+                    sx={{
+                      fontSize: "0.75rem",
+                      letterSpacing: "0.2em",
+                      textTransform: "uppercase",
+                      opacity: 0.8,
+                      mb: 1,
+                    }}
+                  >
+                    {project.tag}
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      fontSize: "1.5rem",
+                      fontWeight: 700,
+                      mb: 1,
+                    }}
+                  >
+                    {project.title}
+                  </Typography>
+
+                  <Typography sx={{ opacity: 0.9 }}>
+                    {project.subtitle}
+                  </Typography>
+                </Paper>
               </motion.div>
             </Grid>
           ))}
         </Grid>
+
       </Container>
     </Box>
   );

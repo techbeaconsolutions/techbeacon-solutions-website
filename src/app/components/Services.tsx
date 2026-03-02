@@ -3,451 +3,200 @@
 import {
   Box,
   Container,
-  Typography,
-  Card,
-  CardContent,
-  CardHeader,
   Grid,
+  Typography,
+  Stack,
+  Paper,
 } from "@mui/material";
+
+import LanguageIcon from "@mui/icons-material/Language";
+import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
+import CloudOutlinedIcon from "@mui/icons-material/CloudOutlined";
+import DesignServicesIcon from "@mui/icons-material/DesignServices";
+import ApartmentIcon from "@mui/icons-material/Apartment";
+import CodeIcon from "@mui/icons-material/Code";
+
 import { motion } from "framer-motion";
-import WebIcon from "@mui/icons-material/Public";
-import MobileIcon from "@mui/icons-material/PhoneIphone";
-import SoftwareIcon from "@mui/icons-material/Code";
-import CloudIcon from "@mui/icons-material/Storage";
-import PlaceIcon from '@mui/icons-material/Place';
-import MonochromePhotosIcon from '@mui/icons-material/MonochromePhotos';
-import GroupsIcon from '@mui/icons-material/Groups';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 
-const services = [
-  {
-    icon: WebIcon,
-    title: "Web Development",
-    description:
-"Modern, responsive websites and scalable web applications built using React, Next.js, and modern frameworks to drive business growth and performance.",    features: [
-      "React/Next.js",
-      "SEO Optimized",
-      "Fast Loading",
-      "E-commerce Ready",
-    ],
-  },
-  {
-    icon: MobileIcon,
-    title: "Mobile Apps",
-    description:
-"High-performance Android and iOS mobile applications built using React Native and Flutter, designed for speed, security, and great user experience.",
-    features: ["React Native", "Flutter", "iOS/Android", "App Store Ready"],
-  },
-  {
-    icon: SoftwareIcon,
-    title: "Custom Software",
-    description:
-"Tailor-made software solutions designed to streamline business operations, automate workflows, and scale with your organization’s growth.",
-    features: [
-      "Custom Development",
-      "API Integration",
-      "Database Design",
-      "Scalable Architecture",
-    ],
-  },
-  {
-    icon: CloudIcon,
-    title: "Hosting & Support",
-    description:
-"Reliable cloud hosting, performance monitoring, and 24/7 technical support to ensure your applications remain fast, secure, and always available.",
-    features: [
-      "Cloud Hosting",
-      "24/7 Support",
-      "Regular Backups",
-      "Performance Monitoring",
-    ],
-  },
-];
+export default function ServicesSection() {
+  const services = [
+    {
+      title: "Web Development",
+      description:
+        "Modern, scalable web applications built with cutting-edge technologies and frameworks.",
+      icon: <LanguageIcon />,
+      tag: "Full Stack",
+    },
+    {
+      title: "Mobile Apps",
+      description:
+        "Native and cross-platform mobile apps for iOS and Android with fluid UX.",
+      icon: <PhoneIphoneIcon />,
+      tag: "iOS & Android",
+    },
+    {
+      title: "Cloud & DevOps",
+      description:
+        "Scalable cloud infrastructure, CI/CD pipelines, and DevOps automation.",
+      icon: <CloudOutlinedIcon />,
+      tag: "AWS / GCP",
+    },
+    {
+      title: "UI/UX Design",
+      description:
+        "Beautiful, user-centered designs that convert visitors into loyal customers.",
+      icon: <DesignServicesIcon />,
+      tag: "Design Systems",
+    },
+    {
+      title: "Real Estate Tech",
+      description:
+        "Custom real estate platforms with property management and virtual tours.",
+      icon: <ApartmentIcon />,
+      tag: "PropTech",
+    },
+    {
+      title: "API & Integrations",
+      description:
+        "Robust API development and third-party integrations for seamless workflows.",
+      icon: <CodeIcon />,
+      tag: "Automation",
+    },
+  ];
 
-
-
-const digitalservices = [
-  {
-    icon: PlaceIcon,
-    title: "Google Business Profile",
-    description:
-"Optimize your Google Business Profile to appear on Google Maps and local searches, attract nearby customers, and increase trust through reviews.",
-    features: [
-      "Profile setup & optimization",
-      "Local visibility",
-      "Reviews & map ranking"
-    ],
-  },
-  {
-    icon: MonochromePhotosIcon,
-    title: "Instagram Marketing",
-    description:
-"Grow your local brand presence with consistent Instagram posts, reels, and engagement strategies designed for your target audience.",
-    features: ["Business posts & reels", "Local audience reach", "Engagement growth"],
-  },
-  {
-    icon: GroupsIcon,
-    title: "Facebook Marketing",
-    description:
-      "Reach nearby customers with targeted Facebook posts and ads.",
-    features: [
-      "Local targeting", "Lead-focused ads", "Business visibility",
-    ],
-  },
-  {
-    icon: TrendingUpIcon,
-    title: "Digital Marketing",
-    description:
-"End-to-end digital marketing solutions including SEO, social media marketing, and lead generation to grow your business online.",
-    features: [
-      "SEO",
-      "Social media marketing",
-      "Lead generation",
-    ],
-  },
-];
-
-export default function Services() {
   return (
-    <><Box sx={{ py: 8, bgcolor: "background.default" }}>
-      <Container>
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-        >
-          <Typography variant="h2" fontWeight={700} align="center">
-            Our{" "}
-            <Box
-              component="span"
-              sx={{
-                background: "linear-gradient(90deg,#0871da,#0cc6e9)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              Services
-            </Box>
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            align="center"
-            sx={{ mb: 6, maxWidth: 700, mx: "auto" }}
-          >
-            Comprehensive IT solutions tailored to drive your business forward in
-            the digital age
-          </Typography>
-        </motion.div>
+    <Box
+      sx={{
+        background:
+          "radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0b1120 60%)",
+        color: "#fff",
+        py: { xs: 10, md: 14 },
+      }}
+    >
+      <Container maxWidth="lg">
 
-        {/* Responsive Grid Cards */}
+        {/* ===== HERO TEXT ===== */}
+        <Stack spacing={3} textAlign="center" mb={10}>
+          <Typography
+            sx={{
+              fontSize: "0.8rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "#6366F1",
+              fontWeight: 600,
+            }}
+          >
+            What We Do
+          </Typography>
+
+          <Typography
+            sx={{
+              fontSize: { xs: "2.5rem", md: "4rem" },
+              fontWeight: 800,
+              lineHeight: 1.1,
+            }}
+          >
+            Our Core Services
+          </Typography>
+
+          <Typography
+            sx={{
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              color: "#94A3B8",
+            }}
+          >
+            End-to-end digital solutions engineered for scale and performance.
+          </Typography>
+        </Stack>
+
+        {/* ===== SERVICES GRID ===== */}
         <Grid container spacing={4}>
           {services.map((service, index) => (
-            <Grid
-              key={index}
-              item
-              xs={12}
-              sm={6}
-              md={3}
-            >
+            <Grid item xs={12} md={4} key={index}>
               <motion.div
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                style={{ height: "100%" }}
               >
-                <Card
+                <Paper
+                  elevation={0}
                   sx={{
+                    p: 4,
+                    borderRadius: "20px",
+                    backgroundColor: "#111827",
+                    border: "1px solid rgba(255,255,255,0.08)",
                     height: "100%",
-                    borderRadius: 3,
-                    textAlign: "center",
-                    py: 4,
-                    boxShadow: "0 4px 10px rgba(0,0,0,0.09)",
-                    transition: "0.3s",
-                    display: "flex",
-                    flexDirection: "column",
+                    transition: "all 0.3s ease",
                     "&:hover": {
-                      transform: "translateY(-8px)",
-                      boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+                      borderColor: "#6366F1",
+                      transform: "translateY(-6px)",
+                      boxShadow:
+                        "0 10px 40px rgba(99,102,241,0.15)",
                     },
                   }}
                 >
-                  <CardHeader sx={{ textAlign: "center", pb: 1 }} />
-
-                  {/* Animated Icon */}
-                  <motion.div
-                    animate={{ y: [0, -8, 0] }}
-                    transition={{
-                      duration: 1.5,
-                      repeat: Infinity,
-                      repeatType: "loop",
-                      ease: "easeInOut",
-                    }}
-                  >
+                  <Stack spacing={2}>
+                    {/* Icon */}
                     <Box
                       sx={{
-                        mx: "auto",
-                        mb: 3,
-                        p: 2,
-                        width: 64,
-                        height: 64,
-                        borderRadius: 3,
-                        background: "linear-gradient(135deg,#0871da,#0cc6e9)",
+                        width: 50,
+                        height: 50,
+                        borderRadius: "12px",
+                        backgroundColor:
+                          "rgba(99,102,241,0.15)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        boxShadow: "0 6px 20px rgba(8,113,218,0.3)",
+                        color: "#6366F1",
                       }}
                     >
-                      <service.icon fontSize="large" sx={{ color: "#fff" }} />
+                      {service.icon}
                     </Box>
-                  </motion.div>
 
-                  {/* Title */}
-                  <Typography
-                    variant="h3"
-                    sx={{
-                      "&:hover": {
-                        background: "linear-gradient(90deg,#0871da,#0cc6e9)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      },
-                    }}
-                  >
-                    {service.title}
-                  </Typography>
+                    {/* Title */}
+                    <Typography
+                      variant="h6"
+                      sx={{ fontWeight: 600, color: "white" }}
+                    >
+                      {service.title}
+                    </Typography>
 
-                  {/* Content */}
-                  <CardContent
-                    sx={{
-                      flexGrow: 1,
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
                     {/* Description */}
                     <Typography
-                      variant="body2"
-                      color="text.secondary"
                       sx={{
-                        mb: 2,
-                        lineHeight: 1.6,
-                        whiteSpace: "pre-line",
+                        color: "#94A3B8",
+                        fontSize: "0.95rem",
                       }}
                     >
                       {service.description}
                     </Typography>
 
-                    {/* Features */}
+                    {/* Tag */}
                     <Box
                       sx={{
-                        mt: "auto",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 1,
+                        alignSelf: "flex-start",
+                        px: 2,
+                        py: 0.5,
+                        borderRadius: "999px",
+                        fontSize: "0.75rem",
+                        backgroundColor:
+                          "rgba(255,255,255,0.05)",
+                        border:
+                          "1px solid rgba(255,255,255,0.08)",
+                        color: "#94A3B8",
                       }}
                     >
-                      {service.features.map((feature, featureIndex) => (
-                        <Box
-                          key={featureIndex}
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            fontSize: "0.85rem",
-                            color: "rgba(0,0,0,0.7)",
-                          }}
-                        >
-                          <Box
-                            sx={{
-                              width: 8,
-                              height: 8,
-                              borderRadius: "50%",
-                              mr: 1.5,
-                              background: "linear-gradient(135deg,#0871da,#0cc6e9)",
-                            }} />
-                          {feature}
-                        </Box>
-                      ))}
+                      {service.tag}
                     </Box>
-                  </CardContent>
-                </Card>
+                  </Stack>
+                </Paper>
               </motion.div>
             </Grid>
           ))}
         </Grid>
+
       </Container>
-    </Box><Box sx={{ py: 8, bgcolor: "background.default" }}>
-        <Container>
-          {/* Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            <Typography variant="h2" fontWeight={700} align="center">
-              Digital Growth{" "}
-              <Box
-                component="span"
-                sx={{
-                  background: "linear-gradient(90deg,#0871da,#0cc6e9)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                Services
-              </Box>
-            </Typography>
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              align="center"
-              sx={{ mb: 6, maxWidth: 700, mx: "auto" }}
-            >
-              Helping local businesses get discovered, generate enquiries, and grow online.
-            </Typography>
-          </motion.div>
-
-          {/* Responsive Grid Cards */}
-          <Grid container spacing={4}>
-            {digitalservices.map((digitalservice, index) => (
-              <Grid
-                key={index}
-                item
-                xs={12}
-                sm={6}
-                md={3}
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  style={{ height: "100%" }}
-                >
-                  <Card
-                    sx={{
-                      height: "100%",
-                      borderRadius: 3,
-                      textAlign: "center",
-                      py: 4,
-                      boxShadow: "0 4px 10px rgba(0,0,0,0.09)",
-                      transition: "0.3s",
-                      display: "flex",
-                      flexDirection: "column",
-                      "&:hover": {
-                        transform: "translateY(-8px)",
-                        boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
-                      },
-                    }}
-                  >
-                    <CardHeader sx={{ textAlign: "center", pb: 1 }} />
-
-                    {/* Animated Icon */}
-                    <motion.div
-                      animate={{ y: [0, -8, 0] }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        repeatType: "loop",
-                        ease: "easeInOut",
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          mx: "auto",
-                          mb: 3,
-                          p: 2,
-                          width: 64,
-                          height: 64,
-                          borderRadius: 3,
-                          background: "linear-gradient(135deg,#0871da,#0cc6e9)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          boxShadow: "0 6px 20px rgba(8,113,218,0.3)",
-                        }}
-                      >
-                        <digitalservice.icon fontSize="large" sx={{ color: "#fff" }} />
-                      </Box>
-                    </motion.div>
-
-                    {/* Title */}
-                    <Typography
-                      variant="h3"
-                      sx={{
-                        "&:hover": {
-                          background: "linear-gradient(90deg,#0871da,#0cc6e9)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                        },
-                      }}
-                    >
-                      {digitalservice.title}
-                    </Typography>
-
-                    {/* Content */}
-                    <CardContent
-                      sx={{
-                        flexGrow: 1,
-                        display: "flex",
-                        flexDirection: "column",
-                      }}
-                    >
-                      {/* Description */}
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        sx={{
-                          mb: 2,
-                          lineHeight: 1.6,
-                          whiteSpace: "pre-line",
-                        }}
-                      >
-                        {digitalservice.description}
-                      </Typography>
-
-                      {/* Features */}
-                      <Box
-                        sx={{
-                          mt: "auto",
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: 1,
-                        }}
-                      >
-                        {digitalservice.features.map((feature, featureIndex) => (
-                          <Box
-                            key={featureIndex}
-                            sx={{
-                              display: "flex",
-                              alignItems: "center",
-                              fontSize: "0.85rem",
-                              color: "rgba(0,0,0,0.7)",
-                            }}
-                          >
-                            <Box
-                              sx={{
-                                width: 8,
-                                height: 8,
-                                borderRadius: "50%",
-                                mr: 1.5,
-                                background: "linear-gradient(135deg,#0871da,#0cc6e9)",
-                              }} />
-                            {feature}
-                          </Box>
-                        ))}
-                      </Box>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box></>
+    </Box>
   );
 }

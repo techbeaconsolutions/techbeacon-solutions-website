@@ -1,148 +1,152 @@
 "use client";
 
-import { Box, Container, Typography, Paper, Grid } from "@mui/material";
-import EmojiPeopleOutlinedIcon from "@mui/icons-material/EmojiPeopleOutlined";
-import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
-import TrackChangesOutlinedIcon from "@mui/icons-material/TrackChangesOutlined";
+import { Box, Container, Typography, Grid, Stack } from "@mui/material";
 import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <Box sx={{ py: 10, backgroundColor: "#fff" }}>
+    <Box
+      sx={{
+        background:
+          "radial-gradient(circle at 50% 20%, #1e1b4b 0%, #0b1120 60%)",
+        color: "#fff",
+        py: { xs: 10, md: 14 },
+      }}
+    >
       <Container maxWidth="lg">
-        {/* Main Row */}
-        <Grid container spacing={8} alignItems="flex-start">
-          {/* LEFT SIDE */}
-          <Grid item xs={12} md={7}>
-            {/* Heading */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
+
+        {/* HERO TITLE */}
+        <Stack spacing={3} textAlign="center" mb={10}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: "2.5rem", md: "4.5rem" },
+                fontWeight: 800,
+                lineHeight: 1.1,
+                letterSpacing: "-1.5px",
+              }}
             >
-              <Typography variant="h2" fontWeight={700}>
-                About <span style={{ color: "#0871da" }}>Techbeacon</span>
-              </Typography>
-            </motion.div>
-
-            {/* Shortened Paragraph */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Typography
-                fontSize={18}
-                variant="body1"
-                color="text.secondary"
-                sx={{ mb: 4, maxWidth: 650 }}
-              >
-                Our focus is on innovation, reliability, and long-term partnerships, ensuring every solution we deliver aligns with business goals and future growth.
-              </Typography>
-            </motion.div>
-
-            {/* Features */}
-            <Grid container spacing={4}>
-              <Grid item xs={12} sm={4} textAlign="center">
-                <TrackChangesOutlinedIcon sx={{ fontSize: 40, color: "#0871da" }} />
-                <Typography variant="h3">
-                  Mission-Driven
-                </Typography>
-                <Typography color="text.secondary" fontSize="0.8rem">
-                  Empowering businesses through innovative technology solutions
-                </Typography>
-              </Grid>
-
-              <Grid item xs={12} sm={4} textAlign="center">
-                <EmojiPeopleOutlinedIcon sx={{ fontSize: 40, color: "#0871da" }} />
-                <Typography variant="h3">
-                  Client-Centric
-                </Typography>
-                <Typography color="text.secondary" fontSize="0.8rem">
-                  Your success is our priority, always putting clients first
-                </Typography>
-              </Grid>
-
-              <Grid item xs={12} sm={4} textAlign="center">
-                <LightbulbOutlinedIcon sx={{ fontSize: 40, color: "#0871da" }} />
-                <Typography variant="h3">
-                  Innovation First
-                </Typography>
-                <Typography color="text.secondary" fontSize="0.8rem">
-                  Staying ahead with cutting-edge technologies & methodologies
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-
-          {/* RIGHT SIDE */}
-          <Grid item xs={12} md={5}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Paper
+              About{" "}
+              <Box
+                component="span"
                 sx={{
-                  p: 4,
-                  borderRadius: "12px",
-                  backgroundColor: "#f9fbfd",
-                  border: "1px solid rgba(0, 0, 0, 0.2)",
-                  mt: { xs: 4, md: 0 },
+                  background:
+                    "linear-gradient(90deg, #6366F1, #A78BFA)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
                 }}
               >
-                <Typography variant="h3" fontWeight={700}>
-                  What Makes Us{" "}
-                  <span style={{ color: "#07bddf" }}>Different?</span>
-                </Typography>
+                Techbbeacon
+              </Box>
+            </Typography>
+          </motion.div>
 
-                <Typography variant="body1" sx={{ mb: 1 }}>
-                  ✓ 5+ years of industry experience with proven results
-                </Typography>
-                <Typography variant="body1" sx={{ mb: 1 }}>
-                  ✓ Expert team of certified developers and consultants
-                </Typography>
-                <Typography variant="body1" sx={{ mb: 1 }}>
-                  ✓ Agile development methodology for faster delivery
-                </Typography>
-                <Typography variant="body1" sx={{ mb: 1 }}>
-                  ✓ Complete transparency in pricing and project progress
-                </Typography>
-                <Typography variant="body1" sx={{ mb: 1 }}>
-                  ✓ 24/7 support and maintenance services included
-                </Typography>
-                <Typography variant="body2" sx={{ mb: 1 }}>
-                  ✓ Latest technology stack and industry best practices
-                </Typography>
-              </Paper>
-            </motion.div>
-          </Grid>
-        </Grid>
+          <Typography
+            sx={{
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              color: "#94A3B8",
+            }}
+          >
+            A team of passionate technologists building the future of digital experiences.
+          </Typography>
+        </Stack>
 
-        {/* Bottom Stats */}
-        <Grid
-          container
-          spacing={6}
-          justifyContent="center"
-          textAlign="center"
-          mt={8}
-        >
-          {[
-            { value: "5+", label: "Years Experience", color: "#056bd1" },
-            { value: "40+", label: "Active Clients", color: "#06c3e0" },
-            { value: "15+", label: "Team Members", color: "#056bd1" },
-            { value: "4.9/5", label: "Support Rating", color: "#06c3e0" },
-          ].map((stat, i) => (
-            <Grid item xs={6} sm={3} key={i}>
-              <Typography variant="h3" fontWeight="bold" color={stat.color}>
-                {stat.value}
+        {/* MAIN CONTENT GRID */}
+        <Grid container spacing={8} alignItems="center">
+
+          {/* LEFT SIDE */}
+          <Grid item xs={12} md={6}>
+            <Stack spacing={3}>
+
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "#6366F1",
+                  fontWeight: 600,
+                }}
+              >
+                Our Story
               </Typography>
-              <Typography color="text.secondary">{stat.label}</Typography>
+
+              <Typography
+                sx={{
+                  fontSize: { xs: "2rem", md: "3rem" },
+                  fontWeight: 800,
+                  lineHeight: 1.1,
+                }}
+              >
+                Building Digital Excellence Since 2010
+              </Typography>
+
+              <Typography sx={{ color: "#94A3B8", lineHeight: 1.8 }}>
+                Techbbeacon Solutions was founded with a simple mission:
+                to help businesses thrive in the digital age. Over the years,
+                we’ve grown from a small startup to a full-service IT company
+                trusted by clients worldwide.
+              </Typography>
+
+              <Typography sx={{ color: "#94A3B8", lineHeight: 1.8 }}>
+                Our team combines deep technical expertise with creative
+                problem-solving to deliver scalable, secure, and
+                future-ready solutions.
+              </Typography>
+
+            </Stack>
+          </Grid>
+
+          {/* RIGHT SIDE - STATS */}
+          <Grid item xs={12} md={6}>
+            <Grid container spacing={6}>
+
+              {[
+                { value: "250+", label: "Projects Delivered" },
+                { value: "120+", label: "Happy Clients" },
+                { value: "15+", label: "Years in Business" },
+                { value: "98%", label: "Client Retention" }
+              ].map((stat, index) => (
+                <Grid item xs={6} key={index}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <Typography
+                      sx={{
+                        fontSize: { xs: "3rem", md: "4rem" },
+                        fontWeight: 800,
+                        background:
+                          "linear-gradient(90deg, #6366F1, #A78BFA)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                      }}
+                    >
+                      {stat.value}
+                    </Typography>
+
+                    <Typography
+                      sx={{
+                        color: "#64748B",
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        fontSize: "0.85rem",
+                      }}
+                    >
+                      {stat.label}
+                    </Typography>
+                  </motion.div>
+                </Grid>
+              ))}
+
             </Grid>
-          ))}
+          </Grid>
+
         </Grid>
       </Container>
     </Box>

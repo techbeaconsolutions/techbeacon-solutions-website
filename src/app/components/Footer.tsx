@@ -6,13 +6,11 @@ import {
   Grid,
   Typography,
   Link,
-  Button,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import CampaignIcon from "@mui/icons-material/Campaign";
 
 export default function Footer() {
   const quickLinks = [
@@ -22,7 +20,6 @@ export default function Footer() {
     { label: "Contact", href: "#contact" },
   ];
 
-  /** Smooth scroll handler */
   const handleScroll = (id: string) => {
     const el = document.querySelector(id);
     if (el) {
@@ -31,7 +28,15 @@ export default function Footer() {
   };
 
   return (
-    <Box sx={{ py: 6, backgroundColor: "#0A66C2", color: "white" }}>
+    <Box
+      sx={{
+        pt: 10,
+        pb: 5,
+        background:
+          "radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0b1120 70%)",
+        color: "white",
+      }}
+    >
       <Container maxWidth="lg">
         <Grid container spacing={6}>
           {/* Company Info */}
@@ -42,29 +47,26 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              {/* Logo */}
-              <Box mb={1}>
+              <Box mb={2}>
                 <img
                   src="/favicon.png"
-                  alt="TechBeacon Solutions Logo"
-                  style={{
-                    height: 48,
-                    width: "auto",
-                  }}
+                  alt="TechBeacon Logo"
+                  style={{ height: 50 }}
                 />
               </Box>
 
-              {/* Company Name */}
-              <Typography variant="h6" fontWeight={700} gutterBottom>
+              <Typography variant="h6" fontWeight={700} mb={2}>
                 TechBeacon Solutions
               </Typography>
 
-              {/* Tagline */}
-              <Typography variant="body2" sx={{ lineHeight: 1.7 }}>
-                Your trusted digital growth partner for websites, mobile apps, and custom software solutions.
+              <Typography
+                variant="body2"
+                sx={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.8 }}
+              >
+                Your trusted digital growth partner for websites, mobile apps,
+                and scalable custom software solutions.
               </Typography>
             </motion.div>
-
           </Grid>
 
           {/* Quick Links */}
@@ -75,23 +77,25 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <Typography variant="h6" fontWeight={700} gutterBottom>
+              <Typography variant="h6" fontWeight={700} mb={3}>
                 Quick Links
               </Typography>
 
               {quickLinks.map((item, i) => (
-                <Typography key={i} variant="body2" sx={{ my: 0.5 }}>
+                <Typography key={i} sx={{ mb: 1 }}>
                   {item.href.startsWith("#") ? (
                     <Link
                       component="button"
                       underline="none"
-                      color="inherit"
                       onClick={() => handleScroll(item.href)}
                       sx={{
-                        cursor: "pointer",
-                        "&:hover": { color: "#0cc6e9" },
+                        color: "rgba(255,255,255,0.7)",
+                        transition: "0.3s",
+                        "&:hover": {
+                          color: "#0cc6e9",
+                          transform: "translateX(4px)",
+                        },
                       }}
-                      aria-label={`Scroll to ${item.label}`}
                     >
                       {item.label}
                     </Link>
@@ -99,12 +103,14 @@ export default function Footer() {
                     <Link
                       href={item.href}
                       underline="none"
-                      color="inherit"
                       sx={{
-                        cursor: "pointer",
-                        "&:hover": { color: "#0cc6e9" },
+                        color: "rgba(255,255,255,0.7)",
+                        transition: "0.3s",
+                        "&:hover": {
+                          color: "#0cc6e9",
+                          transform: "translateX(4px)",
+                        },
                       }}
-                      aria-label={`Navigate to ${item.label}`}
                     >
                       {item.label}
                     </Link>
@@ -114,7 +120,7 @@ export default function Footer() {
             </motion.div>
           </Grid>
 
-          {/* Contact Info + CTA */}
+          {/* Contact Info */}
           <Grid item xs={12} md={4}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -122,59 +128,44 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <Typography variant="h6" fontWeight={700} gutterBottom>
+              <Typography variant="h6" fontWeight={700} mb={3}>
                 Contact
               </Typography>
 
-              <Typography
-                variant="body2"
-                sx={{ display: "flex", alignItems: "center", mb: 1 }}
-              >
-                <EmailIcon sx={{ mr: 1, fontSize: 18 }} />
-
+              <Box sx={{ mb: 2, display: "flex", alignItems: "center" }}>
+                <EmailIcon sx={{ mr: 1, color: "#0cc6e9" }} />
                 <Link
                   href="mailto:hello@techbeacon.com"
                   underline="none"
-                  color="inherit"
                   sx={{
-                    cursor: "pointer",
+                    color: "rgba(255,255,255,0.7)",
                     "&:hover": { color: "#0cc6e9" },
                   }}
-                  aria-label="Send email to Techbeacon"
                 >
                   hello@techbeacon.com
                 </Link>
-              </Typography>
+              </Box>
 
-
-              <Typography
-                variant="body2"
-                sx={{ display: "flex", alignItems: "center", mb: 1 }}
-              >
-                <PhoneIcon sx={{ mr: 1, fontSize: 18 }} />
-
+              <Box sx={{ mb: 2, display: "flex", alignItems: "center" }}>
+                <PhoneIcon sx={{ mr: 1, color: "#0cc6e9" }} />
                 <Link
                   href="tel:+919209652754"
                   underline="none"
-                  color="inherit"
                   sx={{
-                    cursor: "pointer",
+                    color: "rgba(255,255,255,0.7)",
                     "&:hover": { color: "#0cc6e9" },
                   }}
-                  aria-label="Call Techbeacon"
                 >
                   +91-9209652754
                 </Link>
-              </Typography>
+              </Box>
 
-
-              <Typography
-                variant="body2"
-                sx={{ display: "flex", alignItems: "center", mb: 3 }}
-              >
-                <LocationOnIcon sx={{ mr: 1, fontSize: 18 }} />
-                Pune, Maharashtra, India
-              </Typography>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <LocationOnIcon sx={{ mr: 1, color: "#0cc6e9" }} />
+                <Typography sx={{ color: "rgba(255,255,255,0.7)" }}>
+                  Pune, Maharashtra, India
+                </Typography>
+              </Box>
             </motion.div>
           </Grid>
         </Grid>
@@ -182,14 +173,17 @@ export default function Footer() {
         {/* Bottom Bar */}
         <Box
           sx={{
-            textAlign: "center",
-            mt: 6,
-            borderTop: "1px solid rgba(255,255,255,0.25)",
+            mt: 8,
             pt: 3,
+            borderTop: "1px solid rgba(255,255,255,0.1)",
+            textAlign: "center",
           }}
         >
-          <Typography variant="body2">
-            © {new Date().getFullYear()} Techbeacon. All rights reserved.
+          <Typography
+            variant="body2"
+            sx={{ color: "rgba(255,255,255,0.6)" }}
+          >
+            © {new Date().getFullYear()} TechBeacon Solutions. All rights reserved.
           </Typography>
         </Box>
       </Container>

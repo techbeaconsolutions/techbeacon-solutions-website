@@ -24,35 +24,44 @@ export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
   const [open, setOpen] = useState(false);
   const [error, setError] = useState(false);
+  const isMobile = useMediaQuery("(max-width:768px)");
+const [loading, setLoading] = useState(false); // 👈 ADD THIS
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!formRef.current || loading) return;
 
-    if (!formRef.current) return;
+    setLoading(true);
 
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        formRef.current!,
+        formRef.current,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       )
       .then(
         () => {
           setOpen(true);
           formRef.current?.reset();
+          setLoading(false);
         },
-        (err) => {
-          console.error("EmailJS Error:", err);
+        () => {
           setError(true);
+          setLoading(false);
         }
       );
   };
 
-  const isMobile = useMediaQuery("(max-width:768px)");
-
   return (
-    <Box id="contact" sx={{ py: 10, backgroundColor: "#f9fbfd" }}>
+    <Box
+      id="contact"
+      sx={{
+        py: 12,
+        background:
+          "radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0b1120 70%)",
+      }}
+    >
       <Container>
         {/* Heading */}
         <motion.div
@@ -61,8 +70,13 @@ export default function Contact() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <Typography variant="h3" fontWeight={700} align="center">
-            Get In{" "}
+          <Typography
+            variant="h3"
+            fontWeight={800}
+            align="center"
+            sx={{ color: "white" }}
+          >
+            Let’s Build Something{" "}
             <Box
               component="span"
               sx={{
@@ -71,113 +85,97 @@ export default function Contact() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Touch
+              Powerful
             </Box>
           </Typography>
+
           <Typography
-            variant="body1"
             align="center"
-            color="text.secondary"
-            sx={{ mb: 6, maxWidth: 700, mx: "auto" }}
+            sx={{
+              mt: 2,
+              mb: 8,
+              maxWidth: 700,
+              mx: "auto",
+              color: "rgba(255,255,255,0.75)",
+              fontSize: 16,
+            }}
           >
-            Ready to transform your business with cutting-edge technology? Let’s
-            discuss your project and create something amazing together.
+            Have an idea? A startup? Or need to scale your business digitally?
+            Let’s discuss your project and turn your vision into reality.
           </Typography>
         </motion.div>
 
         {/* Info Cards */}
-        <Grid container spacing={4} mb={6}>
+        <Grid container spacing={4} mb={8}>
           {[
             {
-              icon: <EmailIcon fontSize="large" sx={{ color: "#0871da" }} />,
+              icon: <EmailIcon sx={{ fontSize: 40, color: "#0cc6e9" }} />,
               title: "Email Us",
-              value: (
-                <Typography
-                  component="a"
-                  href="mailto:techbeacon.solutions@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    color: "inherit",
-                    textDecoration: "none",
-                    fontWeight: 500,
-                    "&:hover": {
-                      color: "#0871da",
-                      textDecoration: "underline",
-                    },
-                  }}
-                >
-                  inquiry@techbeacon.com
-                </Typography>
-              ),
-              subtitle: "We’ll respond within 24 hours",
+              value: "inquiry@techbeacon.com",
+              link: "mailto:inquiry@techbeacon.com",
+              subtitle: "We respond within 24 hours",
             },
             {
-              icon: <WhatsAppIcon fontSize="large" sx={{ color: "#06c3e0" }} />,
+              icon: <WhatsAppIcon sx={{ fontSize: 40, color: "#25D366" }} />,
               title: "WhatsApp",
-              value: (
-                <Button
-                  component="a"
-                  href="https://api.whatsapp.com/send?phone=919209652754&text=Hi%20Techbeacon%20Team,%20I%20want%20to%20discuss%20a%20new%20project."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="contained"
-                  startIcon={<WhatsAppIcon />}
-                  sx={{
-                    backgroundColor: "#25D366",
-                    "&:hover": { backgroundColor: "#1ebe57" },
-                    mt: 2,
-                  }}
-                >
-                  Quick Connect
-                </Button>
-              ),
-              subtitle:
-                "Get instant responses and share your requirement directly on WhatsApp.",
+              value: "Quick Connect",
+              link:
+                "https://api.whatsapp.com/send?phone=919209652754&text=Hi%20Techbeacon%20Team,%20I%20want%20to%20discuss%20a%20new%20project.",
+              subtitle: "Instant discussion & faster response",
             },
             {
-              icon: <LocationOnIcon fontSize="large" sx={{ color: "#0871da" }} />,
-              title: "Visit Us",
-              value: (
-                <Typography
-                  component="a"
-                  href="https://www.google.com/maps/place/Pune,+Maharashtra"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    color: "inherit",
-                    textDecoration: "none",
-                    fontWeight: 500,
-                    "&:hover": {
-                      color: "#0871da",
-                      textDecoration: "underline",
-                    },
-                  }}
-                >
-                  Pune, Maharashtra
-                </Typography>
-              ),
-              subtitle: "IT Hub of India",
+              icon: <LocationOnIcon sx={{ fontSize: 40, color: "#a855f7" }} />,
+              title: "Location",
+              value: "Pune, Maharashtra",
+              link:
+                "https://www.google.com/maps/place/Pune,+Maharashtra",
+              subtitle: "Serving clients across India",
             },
           ].map((item, i) => (
             <Grid item xs={12} sm={6} md={4} key={i}>
               <Paper
-                elevation={3}
+                component="a"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   p: 4,
                   textAlign: "center",
-                  borderRadius: 3,
-                  height: "100%",
-                  transition: "all 0.3s ease",
-                  "&:hover": { boxShadow: 6, transform: "translateY(-4px)" },
+                  borderRadius: 4,
+                  textDecoration: "none",
+                  background: "#161738",
+                  backdropFilter: "blur(10px)",
+                  transition: "0.3s",
+                  "&:hover": {
+                    transform: "translateY(-6px)",
+                    boxShadow: "0 15px 35px rgba(0,0,0,0.4)",
+                  },
                 }}
               >
-                <Box sx={{ mb: 2 }}>{item.icon}</Box>
-                <Typography variant="h6" fontWeight={600}>
+                <Box mb={2}>{item.icon}</Box>
+
+                <Typography
+                  variant="h6"
+                  fontWeight={700}
+                  sx={{ color: "white" }}
+                >
                   {item.title}
                 </Typography>
-                <Box sx={{ my: 1 }}>{item.value}</Box>
-                <Typography variant="body2" color="text.secondary">
+
+                <Typography
+                  sx={{
+                    mt: 1,
+                    fontWeight: 500,
+                    color: "#0cc6e9",
+                  }}
+                >
+                  {item.value}
+                </Typography>
+
+                <Typography
+                  variant="body2"
+                  sx={{ mt: 1, color: "rgba(255,255,255,0.6)" }}
+                >
                   {item.subtitle}
                 </Typography>
               </Paper>
@@ -187,56 +185,65 @@ export default function Contact() {
 
         {/* Contact Form */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <Paper
-            elevation={4}
             sx={{
               p: 6,
-              borderRadius: 3,
+              borderRadius: 4,
               mx: "auto",
-              mb: 6,
-              bgcolor: "#fcfdfd",
-              maxWidth: 600,
+              maxWidth: 650,
+              background: "rgba(255,255,255,0.06)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              backdropFilter: "blur(12px)",
             }}
           >
-            <Typography variant="h5" fontWeight={700} align="center" gutterBottom>
-              Get Free{" "}
-              <Box component="span" sx={{ color: "#06c3e0" }}>
-                Consultation
-              </Box>
+            <Typography
+              variant="h5"
+              fontWeight={700}
+              align="center"
+              sx={{ color: "white", mb: 2 }}
+            >
+              Get Free Consultation
             </Typography>
 
             <Typography
-              variant="body1"
-              color="text.secondary"
               align="center"
-              sx={{ mb: 5 }}
+              sx={{ color: "rgba(255,255,255,0.7)", mb: 5 }}
             >
-              Fill out the form below and we&apos;ll get back to you shortly
+              Fill in your details and our team will contact you shortly.
             </Typography>
 
-            {/* ✅ FORM START */}
             <form ref={formRef} onSubmit={handleSubmit}>
               <Grid container spacing={3}>
-                <Grid item xs={12} sm={6}>
-                  <TextField name="name" label="Name" fullWidth required />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField name="email" label="Email" type="email" fullWidth required />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField name="phone" label="Phone" fullWidth />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField name="company" label="Company" fullWidth />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField name="title" label="Subject / Title" fullWidth required />
-                </Grid>
+                {["Name", "Email", "Phone", "Company"].map((label, index) => (
+                  <Grid item xs={12} sm={6} key={index}>
+                    <TextField
+                      name={label.toLowerCase()}
+                      label={label}
+                      type={label === "Email" ? "email" : "text"}
+                      fullWidth
+                      required={label === "Name" || label === "Email"}
+                      variant="outlined"
+                      sx={{
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: 2,
+                          background: "rgba(255,255,255,0.05)",
+                        },
+                        "& .MuiInputLabel-root": {
+                          color: "rgba(255,255,255,0.7)",
+                        },
+                        "& input": {
+                          color: "white",
+                        },
+                      }}
+                    />
+                  </Grid>
+                ))}
+
                 <Grid item xs={12}>
                   <TextField
                     name="message"
@@ -245,68 +252,89 @@ export default function Contact() {
                     rows={4}
                     fullWidth
                     required
+                    sx={{
+                      "& .MuiInputLabel-root": {
+                        color: "rgba(255,255,255,0.7)", // default label color
+                      },
+                      "& .MuiInputLabel-root.Mui-focused": {
+                        color: "#0cc6e9", // color when focused (optional highlight)
+                      },
+                      "& .MuiOutlinedInput-root": {
+                        borderRadius: 2,
+                        background: "rgba(255,255,255,0.05)",
+                        "& fieldset": {
+                          borderColor: "rgba(255,255,255,0.3)",
+                        },
+                        "&:hover fieldset": {
+                          borderColor: "rgba(255,255,255,0.6)",
+                        },
+                        "&.Mui-focused fieldset": {
+                          borderColor: "#0cc6e9",
+                        },
+                      },
+                      "& textarea": {
+                        color: "white", // text color
+                      },
+                    }}
                   />
                 </Grid>
-
-                <input type="hidden" name="time" value={new Date().toLocaleString()} />
 
                 <Grid item xs={12}>
                   <Button
                     type="submit"
-                    variant="contained"
-                    size="large"
                     fullWidth
+                    size="large"
+                    disabled={loading}
                     sx={{
-                      py: 1.4,
-                      borderRadius: 2,
+                      py: 1.5,
+                      borderRadius: 3,
                       fontWeight: 600,
-                      textTransform: "none",
+                      color: "white",
                       fontSize: "1rem",
+                      transition: "all 0.2s ease",
                       background: "linear-gradient(90deg,#0871da,#0cc6e9)",
                       "&:hover": {
-            background: "linear-gradient(90deg, #0871da, #a855f7)",
-          },
+                        background: "linear-gradient(90deg,#065bb5,#0aa6c4)",
+                        transform: "translateY(-2px)",
+                      },
+                      "&:active": {
+                        transform: "scale(0.97)",
+                      },
                     }}
                   >
-                    Send Message
+                    {loading ? "Sending..." : "Send Message"}
                   </Button>
                 </Grid>
               </Grid>
             </form>
-            {/* ✅ FORM END */}
           </Paper>
         </motion.div>
 
-        {/* Snackbar Notifications */}
+        {/* Snackbar */}
         <Snackbar
           open={open}
           autoHideDuration={4000}
           onClose={() => setOpen(false)}
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
         >
-          <Alert severity="success" sx={{ width: "100%" }}>
-            Message sent successfully!
-          </Alert>
+          <Alert severity="success">Message sent successfully!</Alert>
         </Snackbar>
 
         <Snackbar
           open={error}
           autoHideDuration={4000}
           onClose={() => setError(false)}
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
         >
-          <Alert severity="error" sx={{ width: "100%" }}>
+          <Alert severity="error">
             Failed to send message. Try again later.
           </Alert>
         </Snackbar>
 
-        {/* ✅ Floating WhatsApp Button (Mobile Only) */}
+        {/* Floating WhatsApp Button */}
         {isMobile && (
           <Fab
             component="a"
-            href="https://api.whatsapp.com/send?phone=919209652754&text=Hi%20techbeacon%20Team,%20I%20want%20to%20discuss%20a%20new%20project." target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp"
+            href="https://api.whatsapp.com/send?phone=919209652754"
+            target="_blank"
             sx={{
               position: "fixed",
               bottom: 80,
@@ -314,17 +342,8 @@ export default function Contact() {
               backgroundColor: "#25D366",
               color: "white",
               zIndex: 2000,
-              boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-              animation: "pulse 1.5s infinite",
-              "@keyframes pulse": {
-                "0%": { transform: "scale(1)" },
-                "50%": { transform: "scale(1.08)" },
-                "100%": { transform: "scale(1)" },
-              },
-              "&:hover": {
-                backgroundColor: "#1ebe57",
-                boxShadow: "0 6px 15px rgba(0,0,0,0.4)",
-              },
+              boxShadow: "0 6px 18px rgba(0,0,0,0.4)",
+              "&:hover": { backgroundColor: "#1ebe57" },
             }}
           >
             <WhatsAppIcon sx={{ fontSize: 28 }} />
