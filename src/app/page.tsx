@@ -16,7 +16,7 @@ export const metadata = {
       "Custom web, mobile, and software development solutions for startups and enterprises.",
     images: [
       {
-        url: "/social-preview.png",
+        url: "/favicon.png",
         alt: "Techbeacon software development company",
       },
     ],

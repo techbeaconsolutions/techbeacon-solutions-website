@@ -96,7 +96,7 @@ const Header = () => {
                 color: "white",
               }}
             >
-              Techbbeacon
+              Techbeacon
             </Typography>
           </Box>
 

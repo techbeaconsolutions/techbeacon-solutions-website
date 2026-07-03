@@ -40,7 +40,7 @@ export default function AboutSection() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                Techbbeacon
+                Techbeacon
               </Box>
             </Typography>
           </motion.div>
@@ -85,7 +85,7 @@ export default function AboutSection() {
               </Typography>
 
               <Typography sx={{ color: "#94A3B8", lineHeight: 1.8 }}>
-                Techbbeacon Solutions was founded with a simple mission:
+                Techbeacon Solutions was founded with a simple mission:
                 to help businesses thrive in the digital age. Over the years,
                 we’ve grown from a small startup to a full-service IT company
                 trusted by clients worldwide.
