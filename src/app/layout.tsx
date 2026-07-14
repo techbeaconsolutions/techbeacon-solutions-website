@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, DM_Sans } from "next/font/google";
 import "./globals.css";
-
+import { GoogleAnalytics } from "@next/third-parties/google";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingAuditCTA from "./components/FloatingAuditCTA";
 import EmotionRegistry from "./lib/EmotionRegistry";
@@ -66,6 +66,7 @@ export default function RootLayout({
           <ScrollToTop />
           <FloatingAuditCTA />
         </EmotionRegistry>
+        <GoogleAnalytics gaId="G-TZV72D7D5X" />
       </body>
     </html>
   );
