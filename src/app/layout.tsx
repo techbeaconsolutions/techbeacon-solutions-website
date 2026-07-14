@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, DM_Sans } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
-
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingAuditCTA from "./components/FloatingAuditCTA";
@@ -95,6 +94,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${dmSans.variable}`}>
+        <GoogleTagManager gtmId="GTM-P7T4CSJ7" />
         <EmotionRegistry>
           {/* Structured Data */}
           <script
