@@ -20,7 +20,7 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    "https://techbeacon-solutions-website.vercel.app"
+    "https://techbeaconsolutions.com"
   ),
 
   title: {
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://techbeacon-solutions-website.vercel.app",
+    canonical: "https://techbeaconsolutions.com",
   },
 
   robots: {
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "TechBeacon Solutions",
     description:
       "Helping startups and businesses build high-performing websites, mobile apps and digital solutions.",
-    url: "https://techbeacon-solutions-website.vercel.app",
+    url: "https://techbeaconsolutions.com",
     siteName: "TechBeacon Solutions",
     images: [
       {
@@ -104,8 +104,8 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 name: "TechBeacon Solutions",
-                url: "https://techbeacon-solutions-website.vercel.app",
-                logo: "https://techbeacon-solutions-website.vercel.app/favicon.png",
+                url: "https://techbeaconsolutions.com",
+                logo: "https://techbeaconsolutions.com/favicon.png",
                 email: "hello@techbeacon.com",
                 telephone: "+91-9209652754",
                 address: {
