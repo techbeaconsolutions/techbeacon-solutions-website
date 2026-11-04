@@ -14,45 +14,53 @@ const services = [
   {
     title: "Website Development",
     description:
-      "Responsive, professional websites and landing pages built around your business goals.",
+      "Build responsive, SEO-friendly business websites and landing pages designed to showcase your services, attract potential customers and generate enquiries.",
     href: "/website-development",
+    linkText: "Explore Website Development",
   },
   {
     title: "Custom Software Development",
     description:
-      "Business applications, dashboards, portals, and software tailored to your workflows.",
+      "Simplify business operations with custom software, web applications, dashboards and business portals tailored to your workflows and requirements.",
     href: "/software-development",
+    linkText: "Explore Software Development",
   },
   {
     title: "SEO Services",
     description:
-      "Improve your search visibility and help potential customers discover your business.",
+      "Improve your website's search visibility with technical SEO, on-page optimization and local SEO strategies that help customers find your business.",
     href: "/seo-services",
+    linkText: "Explore SEO Services",
   },
   {
     title: "Digital Marketing",
     description:
-      "Reach relevant audiences with digital marketing strategies designed for business growth.",
+      "Grow your online presence through social media marketing, digital campaigns and targeted strategies designed to connect your business with relevant audiences.",
     href: "/digital-marketing",
+    linkText: "Explore Digital Marketing",
   },
   {
     title: "AI Automation",
     description:
-      "Explore automation solutions that can simplify repetitive business tasks.",
+      "Streamline repetitive business tasks with practical AI automation solutions that improve workflows, save time and support business productivity.",
     href: "/ai-automation",
+    linkText: "Explore AI Automation",
   },
 ];
 
 export default function HomePage() {
   return (
     <>
-      <section id="home">
+      {/* Hero Section */}
+      <section id="home" aria-label="TechBeacon Solutions introduction">
         <Hero />
       </section>
 
+      {/* Services Section */}
       <Box
         component="section"
         id="services"
+        aria-labelledby="services-heading"
         sx={{
           py: { xs: 8, md: 12 },
           color: "#fff",
@@ -72,10 +80,11 @@ export default function HomePage() {
                 textTransform: "uppercase",
               }}
             >
-              What We Do
+              Our Services
             </Typography>
 
             <Typography
+              id="services-heading"
               component="h2"
               sx={{
                 fontWeight: 800,
@@ -83,22 +92,25 @@ export default function HomePage() {
                 lineHeight: 1.2,
               }}
             >
-              Digital Services for Growing Businesses
+              Digital Solutions for Growing Businesses
             </Typography>
 
             <Typography
+              component="p"
               sx={{
                 color: "#94A3B8",
                 maxWidth: 720,
                 lineHeight: 1.8,
               }}
             >
-              TechBeacon Solutions helps businesses in Pune and beyond build
-              their digital presence through website development, software,
-              SEO, marketing, and automation.
+              TechBeacon Solutions provides website development, custom
+              software development, SEO, digital marketing and AI automation
+              services to help businesses build their digital presence
+              and grow. Based in Pune, we work with businesses across India.
             </Typography>
           </Stack>
 
+          {/* Service Cards */}
           <Box
             sx={{
               display: "grid",
@@ -114,6 +126,9 @@ export default function HomePage() {
               <Box
                 key={service.href}
                 sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
                   p: 3,
                   borderRadius: 3,
                   border: "1px solid rgba(148,163,184,0.16)",
@@ -128,17 +143,23 @@ export default function HomePage() {
               >
                 <Typography
                   component="h3"
-                  sx={{ fontSize: "1.2rem", fontWeight: 700, mb: 1.5 }}
+                  sx={{
+                    fontSize: "1.2rem",
+                    fontWeight: 700,
+                    mb: 1.5,
+                  }}
                 >
                   {service.title}
                 </Typography>
 
                 <Typography
+                  component="p"
                   sx={{
                     color: "#94A3B8",
                     fontSize: "0.95rem",
                     lineHeight: 1.8,
                     mb: 2,
+                    flexGrow: 1,
                   }}
                 >
                   {service.description}
@@ -148,6 +169,7 @@ export default function HomePage() {
                   component={Link}
                   href={service.href}
                   variant="text"
+                  aria-label={service.linkText}
                   sx={{
                     px: 0,
                     color: "#A78BFA",
@@ -159,12 +181,13 @@ export default function HomePage() {
                     },
                   }}
                 >
-                  Explore service →
+                  {service.linkText} →
                 </Button>
               </Box>
             ))}
           </Box>
 
+          {/* All Services CTA */}
           <Stack alignItems="center" mt={5}>
             <Button
               component={Link}
@@ -183,24 +206,40 @@ export default function HomePage() {
                 },
               }}
             >
-              View All Services
+              View All Services →
             </Button>
           </Stack>
         </Container>
       </Box>
 
-      <Box component="section" id="about">
+      {/* About Section */}
+      <Box
+        component="section"
+        id="about"
+        aria-label="About TechBeacon Solutions"
+      >
         <AboutSection />
       </Box>
 
+      {/* Portfolio Section */}
       {/* PortfolioSection already contains id="portfolio". */}
       <PortfolioSection />
 
-      <Box component="section" id="why-choose-us">
+      {/* Why Choose Us Section */}
+      <Box
+        component="section"
+        id="why-choose-us"
+        aria-label="Why choose TechBeacon Solutions"
+      >
         <WhyChooseUs />
       </Box>
 
-      <Box component="section" id="contact">
+      {/* Contact Section */}
+      <Box
+        component="section"
+        id="contact"
+        aria-label="Contact TechBeacon Solutions"
+      >
         <Contact />
       </Box>
     </>

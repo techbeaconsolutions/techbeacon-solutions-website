@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -6,11 +7,11 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const services = [
-    "Web Development",
-    "Mobile Apps",
+    "Website Development",
+    "Mobile App Development",
     "Custom Software",
     "AI Automation",
-    "SEO",
+    "SEO Services",
     "Digital Marketing",
   ];
 
@@ -24,9 +25,6 @@ const HeroSection = () => {
         color: "#fff",
         py: { xs: 12, md: 18 },
 
-        /* =========================
-           ANIMATED BACKGROUND GLOW
-        ========================= */
         "&::before": {
           content: '""',
           position: "absolute",
@@ -43,9 +41,6 @@ const HeroSection = () => {
           animation: "heroGlow 10s ease-in-out infinite",
         },
 
-        /* =========================
-           SECONDARY GLOW
-        ========================= */
         "&::after": {
           content: '""',
           position: "absolute",
@@ -61,9 +56,6 @@ const HeroSection = () => {
           animation: "heroGlowReverse 12s ease-in-out infinite",
         },
 
-        /* =========================
-           ANIMATIONS
-        ========================= */
         "@keyframes heroGlow": {
           "0%, 100%": {
             transform: "translateX(-50%) scale(1)",
@@ -107,15 +99,14 @@ const HeroSection = () => {
           textAlign="center"
           alignItems="center"
         >
-          {/* =========================
-              EYEBROW
-          ========================= */}
+          {/* EYEBROW */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <Typography
+              component="p"
               sx={{
                 fontSize: { xs: "0.7rem", md: "0.8rem" },
                 fontWeight: 600,
@@ -128,9 +119,7 @@ const HeroSection = () => {
             </Typography>
           </motion.div>
 
-          {/* =========================
-              MAIN HEADLINE
-          ========================= */}
+          {/* MAIN SEO HEADLINE */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -153,20 +142,16 @@ const HeroSection = () => {
             >
               <Box
                 component="span"
-                sx={{
-                  color: "#fff",
-                }}
+                sx={{ color: "#fff" }}
               >
-                We Build Digital
+                Websites & Digital
               </Box>
 
               <br />
 
               <Box
                 component="span"
-                sx={{
-                  color: "#fff",
-                }}
+                sx={{ color: "#fff" }}
               >
                 Solutions
               </Box>
@@ -189,30 +174,30 @@ const HeroSection = () => {
             </Typography>
           </motion.div>
 
-          {/* =========================
-              DESCRIPTION
-          ========================= */}
+          {/* DESCRIPTION */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
           >
             <Typography
+              component="p"
               sx={{
                 fontSize: { xs: "1rem", md: "1.2rem" },
                 color: "#9CA3AF",
-                maxWidth: "720px",
-                lineHeight: 1.7,
+                maxWidth: "760px",
+                lineHeight: 1.8,
               }}
             >
-              Websites, mobile apps, custom software, AI automation, SEO,
-              and digital marketing — all designed around your business.
+              TechBeacon Solutions helps businesses in Pune and across India
+              grow with professional website development, mobile apps,
+              custom software, SEO, digital marketing and AI automation.
+              Build your digital presence with solutions designed around
+              your business goals.
             </Typography>
           </motion.div>
 
-          {/* =========================
-              CTA BUTTONS
-          ========================= */}
+          {/* CTA BUTTONS */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -284,9 +269,7 @@ const HeroSection = () => {
             </Stack>
           </motion.div>
 
-          {/* =========================
-              SERVICE STRIP
-          ========================= */}
+          {/* SERVICE STRIP */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -294,15 +277,23 @@ const HeroSection = () => {
             style={{ width: "100%" }}
           >
             <Box
+              component="ul"
+              aria-label="TechBeacon Solutions services"
               mt={{ xs: 5, md: 7 }}
               display="flex"
               flexWrap="wrap"
               justifyContent="center"
               alignItems="center"
               gap={1.5}
+              sx={{
+                listStyle: "none",
+                p: 0,
+                m: 0,
+              }}
             >
               {services.map((service) => (
                 <Box
+                  component="li"
                   key={service}
                   sx={{
                     px: 2,
@@ -314,17 +305,12 @@ const HeroSection = () => {
                     },
                     fontWeight: 500,
                     color: "rgba(255,255,255,0.75)",
-
                     border:
                       "1px solid rgba(129,140,248,0.18)",
-
                     backgroundColor:
                       "rgba(99,102,241,0.06)",
-
                     backdropFilter: "blur(8px)",
-
-                    transition:
-                      "all 0.3s ease",
+                    transition: "all 0.3s ease",
 
                     "&:hover": {
                       color: "#fff",
@@ -332,8 +318,7 @@ const HeroSection = () => {
                         "rgba(129,140,248,0.55)",
                       backgroundColor:
                         "rgba(99,102,241,0.12)",
-                      transform:
-                        "translateY(-2px)",
+                      transform: "translateY(-2px)",
                       boxShadow:
                         "0 5px 20px rgba(99,102,241,0.12)",
                     },

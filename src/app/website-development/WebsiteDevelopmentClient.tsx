@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import {
   Accordion,
@@ -97,6 +96,44 @@ const faqs = [
   },
 ];
 
+// Structured data is generated from the same FAQ content shown to visitors,
+// so the schema stays aligned with the visible page.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: a,
+    },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://techbeaconsolutions.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Website Development",
+      item: "https://techbeaconsolutions.com/website-development",
+    },
+  ],
+};
+
+// Escape "<" in serialized JSON-LD to prevent script-tag injection.
+const serializeJsonLd = (schema: object) =>
+  JSON.stringify(schema).replace(/</g, "\\u003c");
+
 const WHATSAPP_NUMBER = "919209652754"; // International format, digits only.
 const CONTACT_PAGE = "/contact";
 
@@ -164,21 +201,11 @@ function SectionTitle({
 }
 
 export default function WebsiteDevelopmentPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   const contactHref = CONTACT_PAGE;
 
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
     "Hi TechBeacon Solutions, I want to discuss a website development project."
   )}`;
-
-  const navItems = [
-    ["Home", "/"],
-    ["Services", "/#services"],
-    ["Portfolio", "/portfolio"],
-    ["About", "/#about"],
-    ["Contact", "#contact"],
-  ];
 
   return (
     <Box
@@ -193,130 +220,17 @@ export default function WebsiteDevelopmentPage() {
         "& *": { boxSizing: "border-box" },
       }}
     >
-      {/* HEADER */}
-      <Box
-        component="header"
-        sx={{
-          borderBottom: "1px solid rgba(142,164,205,0.14)",
-          bgcolor: "rgba(5,11,22,0.9)",
-        }}
-      >
-        <Container maxWidth="lg">
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="space-between"
-            sx={{ minHeight: 78 }}
-          >
-            <Stack
-              component={Link}
-              href="/"
-              direction="row"
-              spacing={1.2}
-              alignItems="center"
-              sx={{ color: "inherit", textDecoration: "none" }}
-            >
-              <Box
-                sx={{
-                  width: 43,
-                  height: 43,
-                  display: "grid",
-                  placeItems: "center",
-                  borderRadius: "13px",
-                  background: gradient,
-                  fontWeight: 900,
-                }}
-              >
-                TB
-              </Box>
-              <Box>
-                <Typography fontWeight={800}>TechBeacon</Typography>
-                <Typography
-                  sx={{
-                    fontSize: 10,
-                    color: "#AAB7CC",
-                    letterSpacing: "0.18em",
-                  }}
-                >
-                  SOLUTIONS
-                </Typography>
-              </Box>
-            </Stack>
+      {/* Structured data: does not change the visible page design. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
+      />
 
-            <Stack
-              direction="row"
-              spacing={3}
-              sx={{ display: { xs: "none", md: "flex" } }}
-            >
-              {navItems.map(([label, href]) => (
-                <Typography
-                  key={label}
-                  component={Link}
-                  href={href}
-                  sx={{
-                    color: "#C2CCDD",
-                    textDecoration: "none",
-                    fontSize: 13,
-                    "&:hover": { color: "#B7A8FF" },
-                  }}
-                >
-                  {label}
-                </Typography>
-              ))}
-            </Stack>
-
-            <Button
-              component={Link}
-              href={contactHref}
-              variant="contained"
-              endIcon={<ArrowForwardRoundedIcon />}
-              sx={{
-                display: { xs: "none", sm: "inline-flex" },
-                background: gradient,
-                color: "#fff",
-                borderRadius: "11px",
-                px: 2,
-                py: 1.2,
-                textTransform: "none",
-                fontWeight: 700,
-              }}
-            >
-              Get a Free Quote
-            </Button>
-
-            <Button
-              onClick={() => setMenuOpen(!menuOpen)}
-              sx={{
-                display: { xs: "inline-flex", md: "none" },
-                color: "#fff",
-                minWidth: 42,
-              }}
-            >
-              {menuOpen ? "×" : "☰"}
-            </Button>
-          </Stack>
-
-          {menuOpen && (
-            <Stack sx={{ display: { xs: "flex", md: "none" }, pb: 2 }}>
-              {navItems.map(([label, href]) => (
-                <Button
-                  key={label}
-                  component={Link}
-                  href={href}
-                  onClick={() => setMenuOpen(false)}
-                  sx={{
-                    justifyContent: "flex-start",
-                    color: "#D9E2F3",
-                    textTransform: "none",
-                  }}
-                >
-                  {label}
-                </Button>
-              ))}
-            </Stack>
-          )}
-        </Container>
-      </Box>
+      {/* The site-wide Header and Footer are rendered by src/app/layout.tsx. */}
 
       {/* HERO */}
       <Box component="section" sx={{ ...sectionSx, pt: { xs: 7, md: 11 } }}>

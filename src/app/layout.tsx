@@ -29,29 +29,37 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://techbeaconsolutions.com"),
 
   title: {
-    default: "TechBeacon Solutions | Website & Mobile App Development",
+    default:
+      "TechBeacon Solutions | Web Development & Digital Marketing",
     template: "%s | TechBeacon Solutions",
   },
 
   description:
-    "TechBeacon Solutions helps startups and local businesses grow with modern websites, mobile apps, Local SEO, Google Business optimization, and custom software solutions in Pune.",
+    "Grow your business with TechBeacon Solutions. Get professional website development, custom software, digital marketing, SEO and AI automation services in Pune and across India.",
+
+  applicationName: "TechBeacon Solutions",
 
   keywords: [
-    "Website Development Pune",
-    "Web Development Company Pune",
-    "Mobile App Development",
-    "Software Development",
-    "Google Business Profile",
+    "Website Development Company Pune",
+    "Web Development Services Pune",
+    "Digital Marketing Agency Pune",
     "SEO Services Pune",
+    "Custom Software Development India",
+    "AI Automation Services",
+    "Mobile App Development",
     "TechBeacon Solutions",
-    "Website Design",
-    "React Development",
-    "Next.js Development",
   ],
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 
   icons: {
@@ -61,10 +69,11 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "TechBeacon Solutions",
+    title:
+      "TechBeacon Solutions | Web Development & Digital Marketing",
     description:
-      "Helping startups and businesses build high-performing websites, mobile apps and digital solutions.",
-    url: "https://techbeaconsolutions.com",
+      "Professional website development, digital marketing, SEO, software development and AI automation for growing businesses.",
+    url: "https://techbeaconsolutions.com/",
     siteName: "TechBeacon Solutions",
     images: [
       {
@@ -82,7 +91,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TechBeacon Solutions",
     description:
-      "Website Development • Mobile Apps • Local SEO • Software Solutions",
+      "Web Development | Digital Marketing | SEO | Software Development | AI Automation",
     images: ["/favicon.png"],
   },
 };
