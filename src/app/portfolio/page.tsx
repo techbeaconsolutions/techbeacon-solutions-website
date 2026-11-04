@@ -59,7 +59,7 @@ const projects = [
   },
 ];
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const cardVariants: Variants = {
   hidden: {

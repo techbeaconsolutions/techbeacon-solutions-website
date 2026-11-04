@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -17,7 +18,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import CampaignIcon from "@mui/icons-material/Campaign";
 import PaletteIcon from "@mui/icons-material/Palette";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-
+import Button from "@mui/material/Button";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function ServicesSection() {
@@ -28,13 +31,7 @@ export default function ServicesSection() {
         "Modern, responsive websites designed to represent your business and generate enquiries.",
       icon: <LanguageIcon />,
       tag: "Web Development",
-    },
-    {
-      title: "Mobile App Development",
-      description:
-        "Cross-platform mobile applications built for businesses, startups, and digital products.",
-      icon: <PhoneIphoneIcon />,
-      tag: "iOS & Android",
+      href: "/website-development",
     },
     {
       title: "Custom Software",
@@ -42,6 +39,23 @@ export default function ServicesSection() {
         "Business-focused dashboards, portals, CRM systems, and custom applications built around your workflow.",
       icon: <CodeIcon />,
       tag: "Business Software",
+      href: "/software-development",
+    },
+    {
+      title: "Digital Maraketing",
+      description:
+        "Strategic online marketing solutions to boost your brand visibility and drive customer engagement.",
+      icon: <CampaignIcon />,
+      tag: "Digital Marketing",
+      href: "/digital-marketing",
+    },
+    {
+      title: "SEO & Content",
+      description:
+        "Optimize your online presence and create compelling content to attract and retain customers.",
+      icon: <SearchIcon />,
+      tag: "SEO & Content",
+      href: "/seo-services",
     },
     {
       title: "AI & Automation",
@@ -49,34 +63,7 @@ export default function ServicesSection() {
         "AI-powered tools and automated workflows that reduce repetitive work and improve business efficiency.",
       icon: <AutoAwesomeIcon />,
       tag: "AI Solutions",
-    },
-    {
-      title: "SEO & Google Business",
-      description:
-        "Improve your search visibility, local presence, and Google Business Profile to help customers find you.",
-      icon: <SearchIcon />,
-      tag: "Local SEO",
-    },
-    {
-      title: "Digital Marketing",
-      description:
-        "Social media, campaigns, content, and digital strategies designed to help your business reach more customers.",
-      icon: <CampaignIcon />,
-      tag: "Marketing",
-    },
-    {
-      title: "Branding & UI/UX",
-      description:
-        "Professional visual identities and user experiences that create a consistent and memorable brand.",
-      icon: <PaletteIcon />,
-      tag: "Design & Branding",
-    },
-    {
-      title: "WhatsApp Automation",
-      description:
-        "Automate customer communication, lead handling, notifications, and everyday business workflows.",
-      icon: <WhatsAppIcon />,
-      tag: "Automation",
+      href: "/ai-automation",
     },
   ];
 
@@ -518,6 +505,27 @@ export default function ServicesSection() {
                     >
                       {service.tag}
                     </Box>
+
+                    <Button
+                      component={Link}
+                      href={service.href}
+                      endIcon={<ArrowForwardIcon />}
+                      sx={{
+                        alignSelf: "flex-start",
+                        mt: 1,
+                        px: 0,
+                        color: "#A5B4FC",
+                        fontWeight: 600,
+                        textTransform: "none",
+                        "&:hover": {
+                          color: "#38BDF8",
+                          backgroundColor: "transparent",
+                        },
+                      }}
+                    >
+                      Explore Service
+                    </Button>
+
                   </Stack>
                 </Paper>
               </motion.div>

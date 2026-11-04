@@ -1,33 +1,31 @@
-import About from "./components/About";
-import Services from "./components/Services";
-import WhyChooseUs from "./components/WhyChooseUs";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import type { Metadata } from "next";
-import HomePage from "./components/HomePage";
 
-export const metadata = {
-  title: "Custom Web & Mobile App Development Company | Techbeacon",
+import type { Metadata } from "next";
+import HomePage from "./components/home/HomePage";
+
+export const metadata: Metadata = {
+  title: "Website Development Company in Pune | TechBeacon",
   description:
-    "Techbeacon is a software development company offering web development, mobile app development, and custom software solutions.",
+    "Looking for a website development company in Pune? TechBeacon Solutions builds business websites, custom software, mobile apps, and digital marketing solutions.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Techbeacon – Digital Growth Partner",
+    title: "TechBeacon Solutions | Website Development in Pune",
     description:
-      "Custom web, mobile, and software development solutions for startups and enterprises.",
+      "Grow your business with professional website development, custom software, SEO, and digital marketing services in Pune.",
+    url: "https://techbeaconsolutions.com/",
+    siteName: "TechBeacon Solutions",
+    locale: "en_IN",
+    type: "website",
     images: [
       {
         url: "/favicon.png",
-        alt: "Techbeacon software development company",
+        alt: "TechBeacon Solutions",
       },
     ],
   },
 };
 
-
 export default function Page() {
-  return (
-    <>
-      <HomePage />
-    </>
-  );
+  return <HomePage />;
 }

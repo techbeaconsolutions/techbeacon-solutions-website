@@ -1,9 +1,16 @@
+
 import type { Metadata } from "next";
 import { Poppins, DM_Sans } from "next/font/google";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import {
+  GoogleAnalytics,
+  GoogleTagManager,
+} from "@next/third-parties/google";
 import "./globals.css";
-import ScrollToTop from "./components/ScrollToTop";
-import FloatingAuditCTA from "./components/FloatingAuditCTA";
+
+import Header from "./components/layou/Header";
+import Footer from "./components/layou/Footer";
+import ScrollToTop from "./components/layou/ScrollToTop";
+import FloatingAuditCTA from "./components/layou/FloatingAuditCTA";
 import EmotionRegistry from "./lib/EmotionRegistry";
 
 const poppins = Poppins({
@@ -19,9 +26,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    "https://techbeaconsolutions.com"
-  ),
+  metadataBase: new URL("https://techbeaconsolutions.com"),
 
   title: {
     default: "TechBeacon Solutions | Website & Mobile App Development",
@@ -43,10 +48,6 @@ export const metadata: Metadata = {
     "React Development",
     "Next.js Development",
   ],
-
-  alternates: {
-    canonical: "https://techbeaconsolutions.com",
-  },
 
   robots: {
     index: true,
@@ -91,43 +92,47 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "TechBeacon Solutions",
+    url: "https://techbeaconsolutions.com",
+    logo: "https://techbeaconsolutions.com/favicon.png",
+    email: "hello@techbeacon.com",
+    telephone: "+91-9209652754",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Pune",
+      addressRegion: "Maharashtra",
+      addressCountry: "IN",
+    },
+    sameAs: [
+      "https://www.linkedin.com/company/techbeacon-solutions",
+    ],
+  };
+
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${dmSans.variable}`}>
         <GoogleTagManager gtmId="GTM-P7T4CSJ7" />
+
         <EmotionRegistry>
-          {/* Structured Data */}
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                name: "TechBeacon Solutions",
-                url: "https://techbeaconsolutions.com",
-                logo: "https://techbeaconsolutions.com/favicon.png",
-                email: "hello@techbeacon.com",
-                telephone: "+91-9209652754",
-                address: {
-                  "@type": "PostalAddress",
-                  addressLocality: "Pune",
-                  addressRegion: "Maharashtra",
-                  addressCountry: "IN",
-                },
-                sameAs: [
-                  "https://www.linkedin.com/company/techbeacon-solutions"
-                ],
-              }),
+              __html: JSON.stringify(organizationSchema),
             }}
           />
 
+          <Header />
+
           {children}
 
+          <Footer />
           <ScrollToTop />
           <FloatingAuditCTA />
         </EmotionRegistry>
 
-        {/* Google Analytics */}
         <GoogleAnalytics gaId="G-TZV72D7D5X" />
       </body>
     </html>
