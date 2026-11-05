@@ -11,13 +11,10 @@ import {
 } from "@mui/material";
 
 import LanguageIcon from "@mui/icons-material/Language";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import CodeIcon from "@mui/icons-material/Code";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import SearchIcon from "@mui/icons-material/Search";
 import CampaignIcon from "@mui/icons-material/Campaign";
-import PaletteIcon from "@mui/icons-material/Palette";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Button from "@mui/material/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Link from "next/link";
@@ -28,7 +25,7 @@ export default function ServicesSection() {
     {
       title: "Website Development",
       description:
-        "Modern, responsive websites designed to represent your business and generate enquiries.",
+        "Professional, mobile-friendly business websites built to strengthen your online presence, improve user experience, and generate enquiries for businesses in Pune.",
       icon: <LanguageIcon />,
       tag: "Web Development",
       href: "/website-development",
@@ -36,15 +33,15 @@ export default function ServicesSection() {
     {
       title: "Custom Software",
       description:
-        "Business-focused dashboards, portals, CRM systems, and custom applications built around your workflow.",
+        "Custom business software, CRM systems, dashboards, portals, and web applications designed around your processes and growth goals.",
       icon: <CodeIcon />,
       tag: "Business Software",
       href: "/software-development",
     },
     {
-      title: "Digital Maraketing",
+      title: "Digital Marketing",
       description:
-        "Strategic online marketing solutions to boost your brand visibility and drive customer engagement.",
+        "Digital marketing strategies including social media, Google Ads, and lead generation to help Pune businesses reach and convert the right customers.",
       icon: <CampaignIcon />,
       tag: "Digital Marketing",
       href: "/digital-marketing",
@@ -52,7 +49,7 @@ export default function ServicesSection() {
     {
       title: "SEO & Content",
       description:
-        "Optimize your online presence and create compelling content to attract and retain customers.",
+        "Technical SEO, local SEO, keyword research, and content optimisation to help customers find your business on Google.",
       icon: <SearchIcon />,
       tag: "SEO & Content",
       href: "/seo-services",
@@ -60,10 +57,10 @@ export default function ServicesSection() {
     {
       title: "AI & Automation",
       description:
-        "AI-powered tools and automated workflows that reduce repetitive work and improve business efficiency.",
+        "AI chatbots and WhatsApp Business automation that help manage enquiries, qualify leads, and streamline repetitive customer communication.",
       icon: <AutoAwesomeIcon />,
       tag: "AI Solutions",
-      href: "/ai-automation",
+      href: "/ai-whatsapp-automation",
     },
   ];
 
@@ -195,7 +192,7 @@ export default function ServicesSection() {
                 fontWeight: 600,
               }}
             >
-              What We Do
+              Our Digital Services in Pune
             </Typography>
           </motion.div>
 
@@ -213,7 +210,7 @@ export default function ServicesSection() {
                 letterSpacing: "-1px",
               }}
             >
-              Everything Your Business Needs{" "}
+              Digital Services for Growing Pune Businesses{" "}
               <Box
                 component="span"
                 sx={{
@@ -245,9 +242,7 @@ export default function ServicesSection() {
                 lineHeight: 1.7,
               }}
             >
-              From websites and software to SEO, automation, and digital
-              marketing, we create practical digital solutions built around
-              your business.
+              TechBeacon Solutions provides website development, custom software, SEO, digital marketing, and AI & WhatsApp automation for businesses in Pune. Explore our services and find the right digital solution for your business.
             </Typography>
           </motion.div>
         </Stack>

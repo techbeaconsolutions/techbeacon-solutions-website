@@ -127,17 +127,17 @@ const process = [
 
 const faqs = [
   {
-    question: "What is WhatsApp Business automation?",
+    question: "What is WhatsApp Business automation for a Pune business?",
     answer:
       "It uses approved business messaging capabilities and workflows to handle supported tasks such as customer notifications, enquiry collection, reminders, and routing conversations to a team.",
   },
   {
-    question: "Can AI answer customer questions automatically?",
+    question: "Can an AI chatbot answer customer questions automatically?",
     answer:
       "Yes. An appropriately configured AI assistant can answer questions using your supplied business information. Important actions and uncertain or sensitive requests can be routed to a human.",
   },
   {
-    question: "Can automation help generate leads?",
+    question: "Can AI and WhatsApp automation help manage business leads?",
     answer:
       "It can collect enquiry details, ask qualifying questions, organize leads, and route them to your sales team. Results depend on your offer, audience, workflow, and follow-up process.",
   },
@@ -188,7 +188,7 @@ export default function AIWhatsAppAutomationClient() {
               >
                 <Chip
                   icon={<AutoAwesomeRounded />}
-                  label="AI & BUSINESS AUTOMATION"
+                  label="AI & WHATSAPP AUTOMATION IN PUNE"
                   sx={{
                     mb: 3,
                     color: "#C9D5FF",
@@ -211,7 +211,7 @@ export default function AIWhatsAppAutomationClient() {
                     maxWidth: 780,
                   }}
                 >
-                  Less repetitive work.{" "}
+                  AI & WhatsApp Automation in Pune for{" "}
                   <Box
                     component="span"
                     sx={{
@@ -221,7 +221,7 @@ export default function AIWhatsAppAutomationClient() {
                       WebkitTextFillColor: "transparent",
                     }}
                   >
-                    Smarter conversations.
+                    Smarter Business Workflows.
                   </Box>
                 </Typography>
 
@@ -234,10 +234,7 @@ export default function AIWhatsAppAutomationClient() {
                     lineHeight: 1.9,
                   }}
                 >
-                  Turn repetitive enquiries into streamlined workflows with
-                  AI assistants, WhatsApp Business automation, automated
-                  follow-ups, and integrations designed around how your
-                  business operates.
+                  Looking for AI and WhatsApp automation services in Pune? TechBeacon Solutions helps businesses streamline customer conversations, organize incoming leads, automate follow-ups, and connect supported business tools through workflows designed around their operations.
                 </Typography>
 
                 <Stack
@@ -292,9 +289,9 @@ export default function AIWhatsAppAutomationClient() {
                   sx={{ mt: 4 }}
                 >
                   {[
-                    "Designed for your workflows",
-                    "Human handoff options",
-                    "Connected business tools",
+                    "Automation designed around your workflows",
+                    "Human support when it is needed",
+                    "Connected systems and business tools",
                   ].map((item) => (
                     <Stack
                       key={item}
@@ -515,7 +512,7 @@ export default function AIWhatsAppAutomationClient() {
                 maxWidth: 820,
               }}
             >
-              Practical automation for everyday business tasks
+              AI and WhatsApp automation for Pune businesses
             </Typography>
             <Typography
               sx={{
@@ -525,8 +522,7 @@ export default function AIWhatsAppAutomationClient() {
                 lineHeight: 1.9,
               }}
             >
-              Bring conversations, customer enquiries, and repetitive
-              processes into workflows that are easier to manage.
+              Bring customer conversations, enquiries, and repetitive processes into connected workflows that are easier for your Pune business to manage.
             </Typography>
           </Stack>
 
@@ -659,15 +655,13 @@ export default function AIWhatsAppAutomationClient() {
               </Typography>
 
               <Typography component="h2" sx={{ ...headingSx, mt: 2 }}>
-                Automate the routine. Keep people in control.
+                Automate routine work while keeping people in control.
               </Typography>
 
               <Typography
                 sx={{ mt: 2.5, color: "#A7B0C5", lineHeight: 1.9 }}
               >
-                Good automation is more than sending automatic replies. It
-                connects the right information, actions, and people while
-                preserving a clear path to human assistance.
+                Effective business automation is more than sending automatic replies. It connects the right information, actions, and people while preserving a clear path to human assistance.
               </Typography>
 
               <Button
@@ -775,7 +769,7 @@ export default function AIWhatsAppAutomationClient() {
               component="h2"
               sx={{ ...headingSx, textAlign: "center" }}
             >
-              From idea to connected workflow
+              From business requirement to connected workflow
             </Typography>
           </Stack>
 
@@ -824,6 +818,70 @@ export default function AIWhatsAppAutomationClient() {
         </Container>
       </Box>
 
+
+      {/* PUNE BUSINESS AUTOMATION SECTION */}
+      <Box
+        component="section"
+        sx={{
+          ...sectionSx,
+          background: "linear-gradient(180deg, rgba(32,39,70,.28), rgba(8,11,20,0))",
+          borderTop: "1px solid rgba(155,169,255,.10)",
+          borderBottom: "1px solid rgba(155,169,255,.10)",
+        }}
+      >
+        <Container maxWidth="lg">
+          <Grid container spacing={4} alignItems="center">
+            <Grid item xs={12} md={5}>
+              <Typography sx={{ color: "#A99BFF", fontWeight: 750, fontSize: 13, letterSpacing: ".16em" }}>
+                FOR BUSINESSES IN PUNE
+              </Typography>
+              <Typography component="h2" sx={{ ...headingSx, mt: 2 }}>
+                Make customer conversations easier to manage.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={7}>
+              <Typography sx={{ color: "#A7B0C5", lineHeight: 1.9 }}>
+                Businesses often receive enquiries through websites, WhatsApp,
+                and other channels. Managing every conversation manually can
+                make it harder to respond consistently and keep track of the
+                next action. A well-planned automation workflow can help collect
+                enquiry details, answer routine questions, organize requests,
+                and notify the right team member.
+              </Typography>
+              <Typography sx={{ mt: 2, color: "#A7B0C5", lineHeight: 1.9 }}>
+                TechBeacon Solutions works with businesses in Pune to understand
+                their customer journey and identify suitable opportunities for
+                AI assistants, WhatsApp Business messaging, lead routing, and
+                supported system integrations. The proposed setup depends on
+                your workflow, platform access, WhatsApp Business eligibility,
+                and integration requirements. Human escalation can remain part
+                of the process for complex or sensitive conversations.
+              </Typography>
+              <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5} sx={{ mt: 3 }}>
+                <Button component={Link} href="/contact" variant="contained" endIcon={<ArrowForwardRounded />}
+                  sx={{ background: gradient, color: "#fff", textTransform: "none", borderRadius: 2.5, px: 2.5 }}>
+                  Discuss Your Automation Needs
+                </Button>
+                <Button component={Link} href="/software-development"
+                  sx={{ color: "#C5B9FF", textTransform: "none" }}>
+                  Explore Software Development
+                </Button>
+              </Stack>
+              <Stack direction="row" flexWrap="wrap" gap={2} sx={{ mt: 2 }}>
+                <Typography component={Link} href="/digital-marketing"
+                  sx={{ color: "#9FB9FF", fontSize: 13, textDecoration: "none", "&:hover": { color: "#fff" } }}>
+                  Digital Marketing
+                </Typography>
+                <Typography component={Link} href="/website-development"
+                  sx={{ color: "#9FB9FF", fontSize: 13, textDecoration: "none", "&:hover": { color: "#fff" } }}>
+                  Website Development
+                </Typography>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
       {/* FAQ */}
       <Box component="section" sx={sectionSx}>
         <Container maxWidth="md">
@@ -842,7 +900,7 @@ export default function AIWhatsAppAutomationClient() {
               lineHeight: 1.8,
             }}
           >
-            Learn how AI and messaging automation can fit your business.
+            Learn how AI chatbots and WhatsApp Business automation can support your business workflows in Pune and beyond.
           </Typography>
 
           {faqs.map((faq) => (
@@ -906,7 +964,7 @@ export default function AIWhatsAppAutomationClient() {
                 mx: "auto",
               }}
             >
-              Ready to make your business work smarter?
+              Looking for AI automation services in Pune?
             </Typography>
 
             <Typography
@@ -918,9 +976,7 @@ export default function AIWhatsAppAutomationClient() {
                 lineHeight: 1.9,
               }}
             >
-              Tell us about your customer journey and repetitive tasks.
-              Let's explore an AI and WhatsApp automation solution suited to
-              your business needs.
+              Tell us about your customer journey, repetitive tasks, and existing tools. Let's discuss an AI and WhatsApp automation solution suited to your business needs.
             </Typography>
 
             <Button

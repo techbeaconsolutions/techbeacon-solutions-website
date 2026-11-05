@@ -60,9 +60,9 @@ const services = [
   "Custom Software Development",
   "Mobile App Development",
   "Digital Marketing",
-  "SEO & Local SEO",
+  "SEO Services & Local SEO",
   "Google Business Profile",
-  "AI & Business Automation",
+  "AI & WhatsApp Automation",
   "Branding & Design",
   "Other",
 ];
@@ -228,7 +228,7 @@ export default function ContactPage() {
           >
             <Chip
               icon={<SupportAgentOutlined sx={{ fontSize: 17 }} />}
-              label="LET'S BUILD SOMETHING GREAT"
+              label="LET'S BUILD SOMETHING GREAT IN PUNE & BEYOND"
               sx={{
                 mb: 3,
                 px: 1,
@@ -250,7 +250,7 @@ export default function ContactPage() {
                 letterSpacing: "-2.5px",
               }}
             >
-              Have an idea?
+              Contact TechBeacon Solutions
               <Box
                 component="span"
                 sx={{
@@ -263,7 +263,7 @@ export default function ContactPage() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                Let's make it real.
+                Let’s bring it to life.
               </Box>
             </Typography>
 
@@ -277,9 +277,7 @@ export default function ContactPage() {
                 lineHeight: 1.9,
               }}
             >
-              Tell us what you're looking to build or improve. Whether it's a
-              website, software solution, or digital marketing strategy, we're
-              ready to explore how we can help your business grow.
+              Looking for a website development company, custom software partner, SEO team, or digital marketing agency in Pune? Tell us about your goals. We’ll understand your requirements and discuss practical digital solutions for your business.
             </Typography>
           </MotionBox>
         </Container>
@@ -318,7 +316,7 @@ export default function ContactPage() {
                   mb: 2,
                 }}
               >
-                Let's start a conversation.
+                Let’s discuss your business goals.
               </Typography>
 
               <Typography
@@ -329,8 +327,7 @@ export default function ContactPage() {
                   mb: 4,
                 }}
               >
-                Share your goals with us. We'll understand your requirements
-                and help you identify the right next steps for your project.
+                Tell us what your business needs. Our team will review your requirements and help you plan the right website, software, SEO, digital marketing, or automation solution.
               </Typography>
 
               <Stack spacing={2}>
@@ -428,7 +425,7 @@ export default function ContactPage() {
                   />
                   <Box>
                     <Typography sx={{ fontWeight: 700, mb: 0.5 }}>
-                      Serving businesses across India
+                      Based in Pune, serving businesses across India
                     </Typography>
                     <Typography
                       sx={{
@@ -437,8 +434,7 @@ export default function ContactPage() {
                         lineHeight: 1.8,
                       }}
                     >
-                      We work with businesses to build digital experiences and
-                      practical technology solutions for their needs.
+                      Connect with TechBeacon Solutions in Pune for website development, custom software, SEO, digital marketing, and AI-powered business automation. We also work remotely with businesses across India.
                     </Typography>
                   </Box>
                 </Stack>
@@ -595,7 +591,7 @@ export default function ContactPage() {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="What would you like to build? What goals are you trying to achieve?"
+                        placeholder="Tell us about your business, the solution you need, and the goals you want to achieve."
                         inputProps={{ maxLength: 3000 }}
                         helperText={`${formData.message.length}/3000 characters`}
                         sx={inputStyles}

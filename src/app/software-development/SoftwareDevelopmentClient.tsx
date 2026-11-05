@@ -13,16 +13,13 @@ import {
   CardContent,
   Chip,
   Container,
-  Divider,
   Grid,
   Stack,
   Typography,
 } from "@mui/material";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
-import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
 import DashboardRoundedIcon from "@mui/icons-material/DashboardRounded";
-import DevicesRoundedIcon from "@mui/icons-material/DevicesRounded";
 import HubRoundedIcon from "@mui/icons-material/HubRounded";
 import IntegrationInstructionsRoundedIcon from "@mui/icons-material/IntegrationInstructionsRounded";
 import QueryStatsRoundedIcon from "@mui/icons-material/QueryStatsRounded";
@@ -33,8 +30,8 @@ import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 
-const WHATSAPP_NUMBER = ""; // Add your country code and number, digits only.
-const CONTACT_EMAIL = ""; // Add your real business email.
+const WHATSAPP_NUMBER = "919209652754";
+const CONTACT_EMAIL = ""; // Add your real business email before using an email CTA.
 
 const gradient = "linear-gradient(100deg, #3478F6, #9858EF)";
 
@@ -137,27 +134,27 @@ const process = [
 
 const faqs = [
   {
-    q: "What type of software can TechBeacon develop?",
-    a: "We can discuss custom business software, web applications, dashboards, reporting tools, integrations, and improvements to existing systems.",
+    q: "What type of custom software does TechBeacon Solutions develop in Pune?",
+    a: "TechBeacon Solutions works on custom business software, web applications, dashboards, reporting tools, API integrations, and improvements to existing systems. The right solution depends on your business requirements and project scope.",
   },
   {
-    q: "How much does custom software development cost?",
-    a: "The cost depends on functionality, complexity, integrations, design, and project scope. We can prepare a proposal after understanding your requirements.",
+    q: "How much does custom software development cost in Pune?",
+    a: "The cost depends on features, complexity, integrations, design, and project scope. Share your requirements with TechBeacon Solutions to discuss an appropriate estimate and proposal.",
   },
   {
-    q: "Can you build software for our existing business process?",
+    q: "Can you build software around our existing business process?",
     a: "Yes. We start by understanding your current workflow and identifying which requirements the software needs to support.",
   },
   {
-    q: "Can you integrate with our existing systems?",
+    q: "Can you integrate custom software with our existing systems?",
     a: "Integration may be possible when the existing system provides a suitable API or another supported integration method. We assess this during planning.",
   },
   {
-    q: "Will the software work on mobile devices?",
+    q: "Can the software work on mobile devices?",
     a: "We can plan responsive interfaces for desktop, tablet, and mobile based on the application's users and workflows.",
   },
   {
-    q: "Do you provide support after launch?",
+    q: "Do you provide software maintenance and support after launch?",
     a: "Post-launch support and maintenance can be included in the proposal with clearly defined responsibilities and scope.",
   },
 ];
@@ -393,7 +390,7 @@ export default function SoftwareDevelopmentPage() {
         <Container maxWidth="lg">
           <Grid container spacing={{ xs: 5, md: 6 }} alignItems="center">
             <Grid item xs={12} md={6}>
-              <Eyebrow>CUSTOM SOFTWARE DEVELOPMENT</Eyebrow>
+              <Eyebrow>CUSTOM SOFTWARE DEVELOPMENT COMPANY IN PUNE</Eyebrow>
 
               <Typography
                 component="h1"
@@ -409,7 +406,7 @@ export default function SoftwareDevelopmentPage() {
                   color: "#F5F7FF",
                 }}
               >
-                Software Built Around{" "}
+                Custom Software Development in Pune, Built Around{" "}
                 <Box
                   component="span"
                   sx={{
@@ -433,9 +430,7 @@ export default function SoftwareDevelopmentPage() {
                   lineHeight: 1.85,
                 }}
               >
-                Turn complex workflows into practical digital solutions. We
-                help businesses plan, build, and improve software around their
-                real operational needs.
+                Looking for a custom software development company in Pune? TechBeacon Solutions helps businesses plan and build business applications, web platforms, dashboards, and integrations around their real operational needs.
               </Typography>
 
               <Stack
@@ -443,10 +438,10 @@ export default function SoftwareDevelopmentPage() {
                 sx={{ mt: 3 }}
               >
                 {[
-                  "Custom functionality for your workflow",
-                  "Responsive and intuitive interfaces",
-                  "Integration planning for existing systems",
-                  "Clear scope, milestones, and communication",
+                  "Custom software aligned with your business workflow",
+                  "Responsive web applications for your users",
+                  "API and system integration planning",
+                  "Clear project scope, milestones, and communication",
                 ].map((text) => (
                   <Stack
                     key={text}
@@ -520,7 +515,7 @@ export default function SoftwareDevelopmentPage() {
               </Stack>
 
               <Typography sx={{ mt: 2, color: "#71819C", fontSize: 12 }}>
-                Business-focused · Custom-built · Designed to evolve
+                Serving Pune businesses · Custom-built solutions · Designed to evolve
               </Typography>
             </Grid>
 
@@ -742,8 +737,8 @@ export default function SoftwareDevelopmentPage() {
         <Container maxWidth="lg">
           <SectionHeading
             eyebrow="OUR SOFTWARE SERVICES"
-            title="Digital solutions for real business challenges."
-            description="Build new capabilities, connect your systems, and improve the way your team works with software shaped around your requirements."
+            title="Custom software solutions for Pune businesses."
+            description="From custom business applications to dashboards and integrations, plan a software solution around your team, customers, and business processes in Pune."
           />
 
           <Grid container spacing={2.2}>
@@ -980,8 +975,8 @@ export default function SoftwareDevelopmentPage() {
         <Container maxWidth="lg">
           <SectionHeading
             eyebrow="WHY TECHBEACON"
-            title="A development partner focused on your goals."
-            description="We prioritise clear communication, useful functionality, and a process shaped around your business."
+            title="A software development partner focused on your business goals."
+            description="Work with a Pune-focused development team that prioritises clear communication, useful functionality, and a process shaped around your business requirements."
           />
 
           <Grid container spacing={2.5}>
@@ -1020,6 +1015,48 @@ export default function SoftwareDevelopmentPage() {
         </Container>
       </Box>
 
+
+      {/* PUNE BUSINESS CONTEXT */}
+      <Box component="section" sx={{ ...sectionSx, bgcolor: "rgba(9,19,34,.56)", borderTop: "1px solid rgba(123,148,196,.09)" }}>
+        <Container maxWidth="lg">
+          <Grid container spacing={4} alignItems="center">
+            <Grid item xs={12} md={5}>
+              <Eyebrow>SOFTWARE DEVELOPMENT IN PUNE</Eyebrow>
+              <Typography component="h2" sx={headingSx}>
+                Software that fits the way your Pune business works.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={7}>
+              <Typography sx={{ color: "#AAB7CC", lineHeight: 1.9 }}>
+                Businesses in Pune operate across many industries and have different
+                processes, teams, and customer needs. Off-the-shelf tools may not
+                always support a specific workflow. Custom software can bring
+                business information, everyday tasks, and essential processes into
+                a solution planned around your requirements.
+              </Typography>
+              <Typography sx={{ mt: 2, color: "#AAB7CC", lineHeight: 1.9 }}>
+                TechBeacon Solutions discusses your goals first, then helps define
+                the features, user experience, integrations, delivery milestones,
+                and support expectations. Whether you need an internal business
+                application, a customer-facing web platform, or a reporting
+                dashboard, the project starts with a clear understanding of the
+                problem you want to solve.
+              </Typography>
+              <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5} sx={{ mt: 3 }}>
+                <Button component={Link} href="/contact" variant="contained" endIcon={<ArrowForwardRoundedIcon />}
+                  sx={{ background: gradient, color: "#fff", textTransform: "none", borderRadius: "11px", px: 2.5 }}>
+                  Discuss Your Requirements
+                </Button>
+                <Button component={Link} href="/website-development"
+                  sx={{ color: "#C8C1FF", textTransform: "none" }}>
+                  Explore Website Development
+                </Button>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
       {/* FAQ */}
       <Box
         component="section"
@@ -1032,8 +1069,8 @@ export default function SoftwareDevelopmentPage() {
         <Container maxWidth="md">
           <SectionHeading
             eyebrow="FAQ"
-            title="Questions about custom software?"
-            description="Some common questions businesses ask before starting a software project."
+            title="Custom software development in Pune: FAQs."
+            description="Answers to common questions about custom software development, project costs, integrations, timelines, and support for businesses in Pune."
           />
 
           {faqs.map(({ q, a }) => (
@@ -1095,11 +1132,10 @@ export default function SoftwareDevelopmentPage() {
                     fontSize: { xs: "2.1rem", sm: "2.8rem", md: "3.4rem" },
                   }}
                 >
-                  Have a business challenge? Let's discuss a software solution.
+                  Need custom software for your Pune business?
                 </Typography>
                 <Typography sx={{ mt: 2, color: "#B2C0D6", lineHeight: 1.8 }}>
-                  Tell us what you want to improve, automate, or build. We'll
-                  discuss your requirements and possible next steps.
+                  Tell us what you want to improve, automate, or build. TechBeacon Solutions will discuss your requirements, possible approach, and next steps for your software project.
                 </Typography>
 
                 <Stack

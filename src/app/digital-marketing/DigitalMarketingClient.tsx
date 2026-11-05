@@ -46,7 +46,7 @@ const headingSx = {
 const services = [
   {
     number: "01",
-    title: "Search Engine Optimization",
+    title: "SEO Services in Pune",
     description:
       "Improve your search visibility and help potential customers discover your business through relevant organic searches.",
     icon: <SearchRounded />,
@@ -119,17 +119,17 @@ const process = [
 
 const faqs = [
   {
-    question: "Which digital marketing services do you provide?",
+    question: "Which digital marketing services do you provide in Pune?",
     answer:
-      "Our services can include SEO, social media marketing, Google Ads, lead generation, performance marketing, and analytics, based on your business needs.",
+      "TechBeacon Solutions can help plan SEO, social media marketing, Google Ads, lead generation, performance marketing, and analytics based on your business needs, audience, and budget.",
   },
   {
-    question: "Is digital marketing suitable for small businesses?",
+    question: "Is digital marketing suitable for small businesses in Pune?",
     answer:
       "Yes. A focused strategy can help small businesses build visibility and generate enquiries. The best channels depend on your target audience, location, goals, and budget.",
   },
   {
-    question: "How soon can I expect results?",
+    question: "How soon can I expect digital marketing results?",
     answer:
       "Paid advertising may generate traffic and enquiries soon after launch, depending on the campaign and offer. SEO generally takes longer. Results vary, and no specific outcome can be guaranteed.",
   },
@@ -152,6 +152,7 @@ export default function DigitalMarketingClient() {
       {/* HERO */}
       <Box
         component="section"
+        aria-label="Digital marketing services in Pune"
         sx={{
           position: "relative",
           pt: { xs: 10, md: 16 },
@@ -170,7 +171,7 @@ export default function DigitalMarketingClient() {
               >
                 <Chip
                   icon={<AutoGraphRounded />}
-                  label="DIGITAL MARKETING & GROWTH"
+                  label="DIGITAL MARKETING AGENCY IN PUNE"
                   sx={{
                     mb: 3,
                     color: "#C9D5FF",
@@ -189,7 +190,7 @@ export default function DigitalMarketingClient() {
                     maxWidth: 780,
                   }}
                 >
-                  Turn digital attention into{" "}
+                  Digital Marketing Services in Pune for{" "}
                   <Box
                     component="span"
                     sx={{
@@ -199,7 +200,7 @@ export default function DigitalMarketingClient() {
                       WebkitTextFillColor: "transparent",
                     }}
                   >
-                    business growth.
+                    Business Growth.
                   </Box>
                 </Typography>
 
@@ -212,9 +213,7 @@ export default function DigitalMarketingClient() {
                     lineHeight: 1.9,
                   }}
                 >
-                  Build your online presence, reach the right audience, and
-                  create a smarter path from discovery to customer enquiries
-                  with digital marketing tailored to your business.
+                  Looking for a digital marketing agency in Pune? TechBeacon Solutions helps businesses improve online visibility, reach relevant audiences, and turn website visits and campaign engagement into meaningful enquiries through a practical digital marketing strategy.
                 </Typography>
 
                 <Stack
@@ -269,9 +268,9 @@ export default function DigitalMarketingClient() {
                   sx={{ mt: 4 }}
                 >
                   {[
-                    "Goal-oriented strategy",
-                    "Data-informed decisions",
-                    "Transparent reporting",
+                    "Marketing strategy aligned with business goals",
+                    "Campaigns guided by performance data",
+                    "Clear reporting and communication",
                   ].map((item) => (
                     <Stack
                       key={item}
@@ -483,7 +482,7 @@ export default function DigitalMarketingClient() {
               component="h2"
               sx={{ ...headingSx, textAlign: "center", maxWidth: 800 }}
             >
-              Digital marketing built around your goals
+              Digital marketing services for Pune businesses
             </Typography>
             <Typography
               sx={{
@@ -493,8 +492,7 @@ export default function DigitalMarketingClient() {
                 lineHeight: 1.9,
               }}
             >
-              Choose the channels and capabilities that make sense for your
-              business, audience, and growth priorities.
+              From SEO and social media to Google Ads and lead generation, choose the channels that fit your Pune business, target customers, and growth priorities.
             </Typography>
           </Stack>
 
@@ -623,12 +621,10 @@ export default function DigitalMarketingClient() {
                 OUR APPROACH
               </Typography>
               <Typography component="h2" sx={{ ...headingSx, mt: 2 }}>
-                A strategy first. Better decisions at every step.
+                A local marketing strategy. Better decisions at every step.
               </Typography>
               <Typography sx={{ mt: 2.5, color: "#A7B0C5", lineHeight: 1.9 }}>
-                Marketing works best when each activity has a purpose. We
-                connect your business goals with a practical plan, measurable
-                actions, and continuous improvement.
+                Marketing works best when each activity has a purpose. We connect your business goals with a practical plan, measurable actions, and continuous improvement for businesses in Pune and across India.
               </Typography>
 
               <Button
@@ -691,6 +687,69 @@ export default function DigitalMarketingClient() {
                     </Box>
                   </Box>
                 ))}
+              </Stack>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
+
+      {/* PUNE DIGITAL MARKETING SECTION */}
+      <Box
+        component="section"
+        sx={{
+          ...sectionSx,
+          background: "linear-gradient(180deg, rgba(32,39,70,.25), rgba(8,11,20,0))",
+          borderTop: "1px solid rgba(155,169,255,.10)",
+          borderBottom: "1px solid rgba(155,169,255,.10)",
+        }}
+      >
+        <Container maxWidth="lg">
+          <Grid container spacing={4} alignItems="center">
+            <Grid item xs={12} md={5}>
+              <Typography sx={{ color: "#A99BFF", fontWeight: 750, fontSize: 13, letterSpacing: ".16em" }}>
+                FOR BUSINESSES IN PUNE
+              </Typography>
+              <Typography component="h2" sx={{ ...headingSx, mt: 2 }}>
+                Help the right customers discover your business.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={7}>
+              <Typography sx={{ color: "#A7B0C5", lineHeight: 1.9 }}>
+                Whether you serve customers locally in Pune or across India,
+                your marketing should make it easy for people to understand what
+                you offer and what to do next. A clear strategy can combine
+                local and organic search visibility, useful social content,
+                paid campaigns, and conversion-focused landing pages.
+              </Typography>
+              <Typography sx={{ mt: 2, color: "#A7B0C5", lineHeight: 1.9 }}>
+                TechBeacon Solutions starts by understanding your services,
+                ideal customers, competition, and budget. We then help identify
+                suitable channels and ways to measure activity such as relevant
+                website visits, calls, form submissions, and other enquiries.
+                Campaign performance depends on the offer, audience, budget,
+                competition, and execution; specific sales or lead volumes
+                cannot be guaranteed.
+              </Typography>
+              <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5} sx={{ mt: 3 }}>
+                <Button component={Link} href="/contact" variant="contained" endIcon={<ArrowForwardRounded />}
+                  sx={{ background: gradient, color: "#fff", textTransform: "none", borderRadius: 2.5, px: 2.5 }}>
+                  Discuss Your Marketing Goals
+                </Button>
+                <Button component={Link} href="/seo-services"
+                  sx={{ color: "#C5B9FF", textTransform: "none" }}>
+                  Explore SEO Services
+                </Button>
+              </Stack>
+              <Stack direction="row" flexWrap="wrap" gap={2} sx={{ mt: 2 }}>
+                <Typography component={Link} href="/website-development"
+                  sx={{ color: "#9FB9FF", fontSize: 13, textDecoration: "none", "&:hover": { color: "#fff" } }}>
+                  Website Development
+                </Typography>
+                <Typography component={Link} href="/software-development"
+                  sx={{ color: "#9FB9FF", fontSize: 13, textDecoration: "none", "&:hover": { color: "#fff" } }}>
+                  Software Development
+                </Typography>
               </Stack>
             </Grid>
           </Grid>
@@ -772,7 +831,7 @@ export default function DigitalMarketingClient() {
                 mx: "auto",
               }}
             >
-              Ready to grow your digital presence?
+              Looking for digital marketing services in Pune?
             </Typography>
             <Typography
               sx={{
@@ -783,8 +842,7 @@ export default function DigitalMarketingClient() {
                 lineHeight: 1.9,
               }}
             >
-              Tell us about your business and goals. Let's explore a marketing
-              strategy that fits your needs.
+              Tell us about your business, target customers, and goals. Let's discuss a digital marketing plan that fits your needs and budget.
             </Typography>
             <Button
               component={Link}

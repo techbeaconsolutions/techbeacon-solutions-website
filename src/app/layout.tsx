@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Poppins, DM_Sans } from "next/font/google";
 import {
@@ -31,7 +30,9 @@ export const metadata: Metadata = {
   title: {
     default:
       "TechBeacon Solutions | Web Development & Digital Marketing",
-    template: "%s | TechBeacon Solutions",
+    // Page-level titles already include the brand name.
+    // Using "%s" prevents duplicate "| TechBeacon Solutions" suffixes.
+    template: "%s",
   },
 
   description:
@@ -104,20 +105,47 @@ export default function RootLayout({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://techbeaconsolutions.com/#organization",
     name: "TechBeacon Solutions",
-    url: "https://techbeaconsolutions.com",
-    logo: "https://techbeaconsolutions.com/favicon.png",
-    email: "hello@techbeacon.com",
+    url: "https://techbeaconsolutions.com/",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://techbeaconsolutions.com/favicon.png",
+    },
+    email: "hello@techbeaconsolutions.com",
     telephone: "+91-9209652754",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Pune",
-      addressRegion: "Maharashtra",
-      addressCountry: "IN",
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Pune",
+      },
+      {
+        "@type": "Country",
+        name: "India",
+      },
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      telephone: "+91-9209652754",
+      email: "hello@techbeaconsolutions.com",
+      availableLanguage: ["English", "Hindi", "Marathi"],
     },
     sameAs: [
       "https://www.linkedin.com/company/techbeacon-solutions",
     ],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://techbeaconsolutions.com/#website",
+    url: "https://techbeaconsolutions.com/",
+    name: "TechBeacon Solutions",
+    publisher: {
+      "@id": "https://techbeaconsolutions.com/#organization",
+    },
+    inLanguage: "en-IN",
   };
 
   return (
@@ -130,6 +158,13 @@ export default function RootLayout({
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify(organizationSchema),
+            }}
+          />
+
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(websiteSchema),
             }}
           />
 

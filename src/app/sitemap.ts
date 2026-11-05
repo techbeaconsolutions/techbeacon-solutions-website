@@ -1,4 +1,3 @@
-
 import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://techbeaconsolutions.com";
@@ -10,7 +9,7 @@ const routes = [
   { path: "/software-development", priority: 0.8 },
   { path: "/digital-marketing", priority: 0.8 },
   { path: "/seo-services", priority: 0.9 },
-  { path: "/ai-automation", priority: 0.8 },
+  { path: "/ai-whatsapp-automation", priority: 0.8 },
   { path: "/portfolio", priority: 0.8 },
   { path: "/about", priority: 0.6 },
   { path: "/blog", priority: 0.8 },
