@@ -148,41 +148,48 @@ export default function RootLayout({
     inLanguage: "en-IN",
   };
 
-  return (
-    <html lang="en">
-      <body className={`${poppins.variable} ${dmSans.variable}`}>
-<GoogleTagManager gtmId="GTM-PPNXDRF7" />
-        <Script
-  async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1494975375164326"
-  crossOrigin="anonymous"
-/>
-        <EmotionRegistry>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(organizationSchema),
-            }}
-          />
+  
+return (
+  <html lang="en">
+    <head>
+      {/* Google AdSense */}
+      <Script
+        id="google-adsense"
+        async
+        strategy="beforeInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1494975375164326"
+        crossOrigin="anonymous"
+      />
+    </head>
 
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(websiteSchema),
-            }}
-          />
+    <body className={`${poppins.variable} ${dmSans.variable}`}>
+      <GoogleTagManager gtmId="GTM-PPNXDRF7" />
 
-          <Header />
+      <EmotionRegistry>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
 
-          {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
 
-          <Footer />
-          <ScrollToTop />
-          <FloatingAuditCTA />
-        </EmotionRegistry>
+        <Header />
 
-        <GoogleAnalytics gaId="G-TZV72D7D5X" />
-      </body>
-    </html>
-  );
-}
+        {children}
+
+        <Footer />
+        <ScrollToTop />
+        <FloatingAuditCTA />
+      </EmotionRegistry>
+
+      <GoogleAnalytics gaId="G-TZV72D7D5X" />
+    </body>
+  </html>
+);
