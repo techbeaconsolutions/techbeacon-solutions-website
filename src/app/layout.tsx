@@ -152,6 +152,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} ${dmSans.variable}`}>
 <GoogleTagManager gtmId="GTM-PPNXDRF7" />
+        <Script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1494975375164326"
+  crossOrigin="anonymous"
+/>
         <EmotionRegistry>
           <script
             type="application/ld+json"
