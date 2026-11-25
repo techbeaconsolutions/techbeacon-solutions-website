@@ -5,7 +5,7 @@ import {
   GoogleTagManager,
 } from "@next/third-parties/google";
 import "./globals.css";
-
+import Script from "next/script";
 import Header from "./components/layou/Header";
 import Footer from "./components/layou/Footer";
 import ScrollToTop from "./components/layou/ScrollToTop";
@@ -151,8 +151,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${dmSans.variable}`}>
-        <GoogleTagManager gtmId="GTM-P7T4CSJ7" />
-
+<GoogleTagManager gtmId="GTM-PPNXDRF7" />
         <EmotionRegistry>
           <script
             type="application/ld+json"
